@@ -1,21 +1,22 @@
-<nav data-controller="navbar" data-navbar-target="navbarContainer" class="flex items-center justify-between flex-wrap p-6 border-b border-black sticky top-0 z-50">
-  <div class="flex items-center flex-shrink-0 mr-6">
+<nav data-controller="navbar" data-navbar-target="navbarContainer" class="flex items-center justify-between flex-wrap py-4 bg-white sticky top-0 z-50">
+  <div class="flex items-center flex-shrink-0 text-orange mr-6">
     <%= link_to root_path do %>
-      <%= image_tag("logo_MP.png") %>
+      <%= image_tag "logo_MP.png", class: "h-16 w-16" %>
     <% end %>
   </div>
   <div class="block">
-    <button data-action="click->navbar#toggle" class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400">
+    <button data-action="click->navbar#toggle" class="flex items-center px-3 py-2 rounded text-teal-200 border-teal-400">
       <svg data-navbar-target="icon" class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
     </button>
   </div>
-  <div data-navbar-target="button" class="w-full lg:flex lg:items-center lg:w-auto">
-    <div class="text-sm lg:contents">
-      <span data-navbar-target="link" class="5xsm:sr-only lg:not-sr-only"><%= link_to "Se connecter", class: "navbar-link" %></span>
-      <span data-navbar-target="link" class="5xsm:sr-only lg:not-sr-only"><%= link_to "S'inscrire", class: "navbar-link" %></span>
-    </div>
-    <div>
-      <span data-navbar-target="link" class="5xsm:sr-only lg:not-sr-only"><%= link_to "Prochains lives", class:"btn-orange md:mr-14" %></span>
+  <div data-navbar-target="button" class="w-full flex flex-col items-end absolute 2xsm:mt-60 md:mt-60">
+    <div class="text-sm contents">
+      <span data-navbar-target="link" class="2xsm:sr-only"><%= link_to "Nos recettes", class: "navbar-link" %></span>
+      <span data-navbar-target="link" class="2xsm:sr-only"><%= link_to "Nos chefs", class: "navbar-link" %></span>
+      <span data-navbar-target="link" class="2xsm:sr-only"><%= link_to "Ma communauté", class: "navbar-link" %></span>
+      <span data-navbar-target="link" class="2xsm:sr-only"><%= link_to "Se connecter", class: "navbar-link" %></span>
+      <span data-navbar-target="link" class="2xsm:sr-only"><%= link_to "S'inscrire", class: "navbar-link" %></span>
+      <span data-navbar-target="link" class="2xsm:sr-only pb-2"><%= link_to "Prochains lives", class: "navbar-link" %></span>
     </div>
   </div>
 </nav>

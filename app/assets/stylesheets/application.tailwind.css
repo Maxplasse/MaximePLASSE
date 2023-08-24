@@ -9,22 +9,25 @@
 @layer components {
   @media screen(2xsm) {
     .title {
-      @apply font-title text-xs text-black;
+      @apply font-title text-lg text-black;
+    }
+    .navbar-link {
+      @apply block mt-4 text-lg font-body font-bold;
     }
   },
   @media screen(xsm) {
     .title {
-      @apply font-title text-xs;
+      @apply font-title text-[45px];
     }
   },
   @media screen(md) {
     .title {
-      @apply font-title text-sm;
+      @apply font-title text-[45px];
     }
   }
   @media screen(lg) {
     .title {
-      @apply font-title text-lg;
+      @apply font-title text-[45px];
     }
   }
   @media screen(lgxl) {
