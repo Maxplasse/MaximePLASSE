@@ -1,8 +1,14 @@
-<nav data-controller="navbar" data-navbar-target="navbarContainer" class="flex items-center justify-between flex-wrap py-4 bg-white sticky top-0 z-50">
+<nav data-controller="navbar" data-navbar-target="navbarContainer" data-action="scroll@window->navbar#updateNavbar" class="flex items-center justify-between flex-wrap py-4 sticky top-0 z-50 absolute">
   <div class="flex items-center flex-shrink-0 text-orange mr-6">
     <%= link_to root_path do %>
       <%= image_tag "logo_MP.png", class: "h-16 w-16" %>
     <% end %>
+  </div>
+  <div data-navbar-target="title" class="hidden">
+    <h1 class="2xsm:text-[1rem] md:text-[1.9rem] font-title mr-12">
+      <span class="font-light">MAXIME</span>
+      <span class="font-bold">PLASSE</span>
+    </h1>
   </div>
   <div class="block">
     <button data-action="click->navbar#toggle" class="flex items-center px-3 py-2 rounded text-teal-200 border-teal-400">

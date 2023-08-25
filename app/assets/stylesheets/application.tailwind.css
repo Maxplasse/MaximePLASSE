@@ -9,7 +9,7 @@
 @layer components {
   @media screen(2xsm) {
     .title {
-      @apply font-title text-lg text-black;
+      @apply font-title text-black;
     }
     .navbar-link {
       @apply block mt-4 text-lg font-body font-bold;
@@ -17,32 +17,32 @@
   },
   @media screen(xsm) {
     .title {
-      @apply font-title text-[45px];
+      @apply font-title;
     }
   },
   @media screen(md) {
     .title {
-      @apply font-title text-[45px];
+      @apply font-title;
     }
   }
   @media screen(lg) {
     .title {
-      @apply font-title text-[45px];
+      @apply font-title;
     }
   }
   @media screen(lgxl) {
     .title {
-      @apply font-title text-[70px];
+      @apply font-title;
     }
   }
   @media screen(xl) {
     .title {
-      @apply font-title text-[70px];
+      @apply font-title;
     }
   }
   @media screen(2xl) {
     .title {
-      @apply font-title text-[70px];
+      @apply font-title;
     }
   }
 }
