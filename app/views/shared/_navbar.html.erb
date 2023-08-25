@@ -6,9 +6,15 @@
   </div>
   <div data-navbar-target="title" class="hidden">
     <h1 class="2xsm:text-[1rem] md:text-[1.9rem] font-title mr-12">
-      <span class="font-light">MAXIME</span>
-      <span class="font-bold">PLASSE</span>
+      <span class="font-light"><%= t('firstname') %></span>
+      <span class="font-bold"><%= t('lastname') %></span>
     </h1>
+  </div>
+  <div class="absolute right-24 bottom-2.5">
+    <div data-controller="title">
+      <button data-action="click->title#switchLanguage" class="2xsm:text-xs md:text-sm" data-lang="en">EN</button>
+      <button data-action="click->title#switchLanguage" class="2xsm:text-xs md:text-sm" data-lang="fr">FR</button>
+    </div>
   </div>
   <div class="block">
     <button data-action="click->navbar#toggle" class="flex items-center px-3 py-2 rounded text-teal-200 border-teal-400">

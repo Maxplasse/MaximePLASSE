@@ -59,4 +59,9 @@ export default class extends Controller {
       this.element.style.fontSize = `${fontSize}rem`;
     }
   }
+
+  switchLanguage(event) {
+    const language = event.currentTarget.getAttribute('data-lang');
+    window.location.href = `?locale=${language}`;
+  }
 }
