@@ -68,7 +68,7 @@ export default class extends Controller {
         // this.titleTarget.classList.remove("text-black")
       }
     } else {
-      if (window.scrollY > (window.innerHeight-365)) {
+      if (window.scrollY > (window.innerHeight-385)) {
         this.element.classList.add("bg-backgroundcolor")
         this.titleTarget.classList.remove("hidden")
         // this.titleTarget.classList.add("text-black")
