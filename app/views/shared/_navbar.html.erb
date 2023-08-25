@@ -1,34 +1,40 @@
 <nav data-controller="navbar" data-navbar-target="navbarContainer" data-action="scroll@window->navbar#updateNavbar" class="flex items-center justify-between flex-wrap py-4 sticky top-0 z-50 absolute">
-  <div class="flex items-center flex-shrink-0 text-orange mr-6">
+  <div class="4xsm:ml-2 2xsm:ml-1 md:ml-0 flex items-center flex-shrink-0 text-orange md:mr-6">
     <%= link_to root_path do %>
       <%= image_tag "logo_MP.png", class: "h-16 w-16" %>
     <% end %>
   </div>
   <div data-navbar-target="title" class="hidden">
-    <h1 class="2xsm:text-[1rem] md:text-[1.9rem] font-title mr-12">
+    <h1 class="4xsm:text-[1.1rem] 4xsm:mr-[51px] 3xsm:mr-[55px] 2xsm:text-[1.35rem] md:text-[1.9rem] lg:text-[2.45rem] font-title md:mr-[50px]">
       <span class="font-light"><%= t('firstname') %></span>
       <span class="font-bold"><%= t('lastname') %></span>
     </h1>
   </div>
-  <div class="absolute right-24 bottom-2.5">
+  <div class="absolute 4xsm:hidden md:block md:right-24 md:bottom-2.5">
     <div data-controller="title">
-      <button data-action="click->title#switchLanguage" class="2xsm:text-xs md:text-sm" data-lang="en">EN</button>
-      <button data-action="click->title#switchLanguage" class="2xsm:text-xs md:text-sm" data-lang="fr">FR</button>
+      <button data-action="click->title#switchLanguage" class="4xsm:text-xs md:text-sm" data-lang="en">EN</button>
+      <button data-action="click->title#switchLanguage" class="4xsm:text-xs md:text-sm" data-lang="fr">FR</button>
     </div>
   </div>
   <div class="block">
-    <button data-action="click->navbar#toggle" class="flex items-center px-3 py-2 rounded text-teal-200 border-teal-400">
+    <button data-action="click->navbar#toggle" class="4xsm:mr-2 xsm:mr-0 flex items-center md:px-3 py-2 rounded text-teal-200 border-teal-400">
       <svg data-navbar-target="icon" class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
     </button>
   </div>
-  <div data-navbar-target="button" class="w-full flex flex-col items-end absolute 2xsm:mt-60 md:mt-60">
+  <div data-navbar-target="button" class="w-full flex flex-col items-end absolute 4xsm:mt-60 md:mt-60">
     <div class="text-sm contents">
-      <span data-navbar-target="link" class="2xsm:sr-only"><%= link_to "Nos recettes", class: "navbar-link" %></span>
-      <span data-navbar-target="link" class="2xsm:sr-only"><%= link_to "Nos chefs", class: "navbar-link" %></span>
-      <span data-navbar-target="link" class="2xsm:sr-only"><%= link_to "Ma communauté", class: "navbar-link" %></span>
-      <span data-navbar-target="link" class="2xsm:sr-only"><%= link_to "Se connecter", class: "navbar-link" %></span>
-      <span data-navbar-target="link" class="2xsm:sr-only"><%= link_to "S'inscrire", class: "navbar-link" %></span>
-      <span data-navbar-target="link" class="2xsm:sr-only pb-2"><%= link_to "Prochains lives", class: "navbar-link" %></span>
+      <div data-navbar-target="link" class="4xsm:sr-only md:hidden">
+        <div data-controller="title">
+          <button data-action="click->title#switchLanguage" class="4xsm:text-xs md:text-sm" data-lang="en">EN</button>
+          <button data-action="click->title#switchLanguage" class="4xsm:text-xs md:text-sm" data-lang="fr">FR</button>
+        </div>
+      </div>
+      <span data-navbar-target="link" class="4xsm:sr-only"><%= link_to "Nos recettes", class: "navbar-link" %></span>
+      <span data-navbar-target="link" class="4xsm:sr-only"><%= link_to "Nos chefs", class: "navbar-link" %></span>
+      <span data-navbar-target="link" class="4xsm:sr-only"><%= link_to "Ma communauté", class: "navbar-link" %></span>
+      <span data-navbar-target="link" class="4xsm:sr-only"><%= link_to "Se connecter", class: "navbar-link" %></span>
+      <span data-navbar-target="link" class="4xsm:sr-only"><%= link_to "S'inscrire", class: "navbar-link" %></span>
+      <span data-navbar-target="link" class="4xsm:sr-only pb-2"><%= link_to "Prochains lives", class: "navbar-link" %></span>
     </div>
   </div>
 </nav>

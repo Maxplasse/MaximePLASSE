@@ -37,12 +37,26 @@ export default class extends Controller {
     const minFontSize3 = 0.3
 
     // max width 414px
-    const maxFontSize4 = 2
-    const minFontSize4 = 0.3
+    const maxFontSize4 = 3
+    const minFontSize4 = 0
+
+    // max width 390px
+    const maxFontSize5 = 2.8
+    const minFontSize5 = 0
+
+    // max width 375px
+    const maxFontSize6 = 2.7
+    const minFontSize6 = 0
 
 
     // fontSizeOutput(scrolled)
-    if (window.matchMedia("(max-width: 414px)").matches) {
+    if (window.matchMedia("(max-width: 375px)").matches) {
+      const fontSize = scrolled >= 0 && scrolled <= 1 ? ((1 - scrolled) * (maxFontSize6 - minFontSize6)) + minFontSize6 : minFontSize6
+      this.element.style.fontSize = `${fontSize}rem`;
+    } else if (window.matchMedia("(max-width: 390px)").matches) {
+      const fontSize = scrolled >= 0 && scrolled <= 1 ? ((1 - scrolled) * (maxFontSize5 - minFontSize5)) + minFontSize5 : minFontSize5
+      this.element.style.fontSize = `${fontSize}rem`;
+    } else if (window.matchMedia("(max-width: 414px)").matches) {
       const fontSize = scrolled >= 0 && scrolled <= 1 ? ((1 - scrolled) * (maxFontSize4 - minFontSize4)) + minFontSize4 : minFontSize4
       this.element.style.fontSize = `${fontSize}rem`;
     } else if (window.matchMedia("(max-width: 768px)").matches) {

@@ -1,15 +1,15 @@
 <div>
   <div data-controller="title" data-action="scroll@window->title#updateTitleSize">
-    <h1 class="title z-0 relative text-center 2xsm:mt-[155rem] md:mt-[60rem]">
+    <h1 class="title z-0 relative text-center 4xsm:mt-[140rem] 3xsm:mt-[140rem] 2xsm:mt-[120rem] md:mt-[60rem]">
       <span class="font-light"><%= t('firstname') %></span>
       <span class="font-bold"><%= t('lastname') %></span>
     </h1>
   </div>
   <div class="arrow flex justify-center">
-    <div class="mt-10 font-bold">
+    <div class="4xsm:ml-8 4xsm:text-xs 2xsm:text-base 2xsm:ml-8 md:ml-0 mt-10 4xsm:flex-1 4xsm:align-center md:flex-none font-bold">
       <%= t('who') %>
     </div>
-    <div>
+    <div class="flex-1 align-center md:flex-none">
       <a class="link" href="#">
         <span class="link__arrow">
           <span></span>
@@ -18,7 +18,7 @@
         <span class="link__line"></span>
       </a>
     </div>
-    <div class="mt-10 font-bold">
+    <div class="4xsm:mr-8 4xsm:text-xs 2xsm:text-base 2xsm:mr-8 md:mr-0 mt-10 flex-1 align-center md:flex-none font-bold">
       <%= t('cv') %>
     </div>
   </div>

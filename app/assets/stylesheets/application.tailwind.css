@@ -7,6 +7,22 @@
 @import "style";
 
 @layer components {
+  @media screen(4xsm) {
+    .title {
+      @apply font-title text-black;
+    }
+    .navbar-link {
+      @apply block mt-4 text-lg font-body font-bold;
+    }
+  },
+  @media screen(3xsm) {
+    .title {
+      @apply font-title text-black;
+    }
+    .navbar-link {
+      @apply block mt-4 text-lg font-body font-bold;
+    }
+  },
   @media screen(2xsm) {
     .title {
       @apply font-title text-black;

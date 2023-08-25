@@ -15,20 +15,40 @@ export default class extends Controller {
       this.navbarContainerTarget.dataset.expanded = "0"
       this.navbarContainerTarget.classList.remove("md:w-[100%]")
       this.linkTargets.forEach(link => {
-        link.classList.remove("2xsm:sr-only")
+        link.classList.remove("4xsm:sr-only")
       })
     } else {
       this.navbarContainerTarget.dataset.expanded = "1"
       this.navbarContainerTarget.classList.add("md:w-[100%]")
       this.linkTargets.forEach(link => {
-        link.classList.add("2xsm:sr-only")
+        link.classList.add("4xsm:sr-only")
       })
     }
   }
 
   updateNavbar() {
-    if (window.matchMedia("(max-width: 414px)").matches) {
-      if (window.scrollY > (window.innerHeight-445)) {
+    if (window.matchMedia("(max-width: 375px)").matches) {
+      if (window.scrollY > (window.innerHeight-380)) {
+        this.element.classList.add("bg-backgroundcolor")
+        this.titleTarget.classList.remove("hidden")
+        // this.titleTarget.classList.add("text-black")
+      } else {
+        this.element.classList.remove("bg-backgroundcolor")
+        this.titleTarget.classList.add("hidden")
+        // this.titleTarget.classList.remove("text-black")
+      }
+    } else if (window.matchMedia("(max-width: 390px)").matches) {
+      if (window.scrollY > (window.innerHeight-425)) {
+        this.element.classList.add("bg-backgroundcolor")
+        this.titleTarget.classList.remove("hidden")
+        // this.titleTarget.classList.add("text-black")
+      } else {
+        this.element.classList.remove("bg-backgroundcolor")
+        this.titleTarget.classList.add("hidden")
+        // this.titleTarget.classList.remove("text-black")
+      }
+    } else if (window.matchMedia("(max-width: 414px)").matches) {
+      if (window.scrollY > (window.innerHeight-620)) {
         this.element.classList.add("bg-backgroundcolor")
         this.titleTarget.classList.remove("hidden")
         // this.titleTarget.classList.add("text-black")
@@ -58,7 +78,7 @@ export default class extends Controller {
         // this.titleTarget.classList.remove("text-black")
       }
     } else if (window.matchMedia("(max-width: 1200px)").matches){
-      if (window.scrollY > (window.innerHeight-360)) {
+      if (window.scrollY > (window.innerHeight-395)) {
         this.element.classList.add("bg-backgroundcolor")
         this.titleTarget.classList.remove("hidden")
         // this.titleTarget.classList.add("text-black")
@@ -68,7 +88,7 @@ export default class extends Controller {
         // this.titleTarget.classList.remove("text-black")
       }
     } else {
-      if (window.scrollY > (window.innerHeight-385)) {
+      if (window.scrollY > (window.innerHeight-395)) {
         this.element.classList.add("bg-backgroundcolor")
         this.titleTarget.classList.remove("hidden")
         // this.titleTarget.classList.add("text-black")
