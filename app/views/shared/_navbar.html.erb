@@ -1,11 +1,11 @@
 <nav data-controller="navbar" data-navbar-target="navbarContainer" data-action="scroll@window->navbar#updateNavbar" class="flex items-center justify-between flex-wrap py-4 sticky top-0 z-50 absolute">
   <div class="4xsm:ml-2 2xsm:ml-1 md:ml-0 flex items-center flex-shrink-0 text-orange md:mr-6">
-    <%= link_to root_path do %>
+    <a href="#">
       <%= image_tag "logo_MP.png", class: "h-16 w-16" %>
-    <% end %>
+    </a>
   </div>
-  <div data-navbar-target="title" class="hidden">
-    <h1 class="4xsm:text-[1.1rem] 4xsm:mr-[51px] 3xsm:mr-[55px] 2xsm:text-[1.35rem] md:text-[1.9rem] lg:text-[2.45rem] font-title md:mr-[50px]">
+  <div data-navbar-target="title" class="hidden" data-navbar-target="text">
+    <h1 data-navbar-target="text" data-action="scroll->navbar#handleScroll" class="4xsm:text-[1.1rem] 4xsm:mr-[45px] 3xsm:mr-[40px] 2xsm:text-[1.35rem] md:text-[1.9rem] lg:text-[2.45rem] font-title md:mr-[50px]">
       <span class="font-light"><%= t('firstname') %></span>
       <span class="font-bold"><%= t('lastname') %></span>
     </h1>

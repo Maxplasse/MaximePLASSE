@@ -22,11 +22,11 @@ export default class extends Controller {
 
     // min width 1201px
     const maxFontSize = 5
-    const minFontSize = 0.3
+    const minFontSize = 1.7
 
     // min width 1200px
     const maxFontSize2 = 5
-    const minFontSize2 = 0.3
+    const minFontSize2 = 1.7
 
     // max width 992px
     const maxFontSize1 = 5
@@ -42,11 +42,11 @@ export default class extends Controller {
 
     // max width 390px
     const maxFontSize5 = 2.8
-    const minFontSize5 = 0
+    const minFontSize5 = 0.3
 
     // max width 375px
     const maxFontSize6 = 2.7
-    const minFontSize6 = 0
+    const minFontSize6 = 0.3
 
 
     // fontSizeOutput(scrolled)

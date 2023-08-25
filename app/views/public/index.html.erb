@@ -1,12 +1,12 @@
-<div>
+<div class="h-[80vh] flex flex-col justify-center items-center font-title">
   <div data-controller="title" data-action="scroll@window->title#updateTitleSize">
-    <h1 class="title z-0 relative text-center 4xsm:mt-[140rem] 3xsm:mt-[140rem] 2xsm:mt-[120rem] md:mt-[60rem]">
+    <h1>
       <span class="font-light"><%= t('firstname') %></span>
       <span class="font-bold"><%= t('lastname') %></span>
     </h1>
   </div>
-  <div class="arrow flex justify-center">
-    <div class="4xsm:ml-8 4xsm:text-xs 2xsm:text-base 2xsm:ml-8 md:ml-0 mt-10 4xsm:flex-1 4xsm:align-center md:flex-none font-bold">
+  <div class="mt-[-40px] arrow flex justify-center">
+    <div class="4xsm:ml-8 4xsm:text-xs 2xsm:text-base 2xsm:ml-8 md:ml-0 mt-10 4xsm:flex-1 4xsm:align-center md:flex-none font-bold pt-8">
       <%= t('who') %>
     </div>
     <div class="flex-1 align-center md:flex-none">
@@ -18,15 +18,16 @@
         <span class="link__line"></span>
       </a>
     </div>
-    <div class="4xsm:mr-8 4xsm:text-xs 2xsm:text-base 2xsm:mr-8 md:mr-0 mt-10 flex-1 align-center md:flex-none font-bold">
+    <div class="4xsm:mr-8 4xsm:text-xs 2xsm:text-base 2xsm:mr-8 md:mr-0 mt-10 flex-1 align-center md:flex-none font-bold pt-8">
       <%= t('cv') %>
     </div>
   </div>
-  <div class="pt-44 mx-10 text-center">
-    <h2><%= t('presentation') %></h2>
-    <p></p>
-  </div>
-  <div class="mt-32">
-    <%= render 'shared/carousel' %>
-  </div>
+</div>
+<div class="text-black mx-16 font-body">
+  <span class="text-[40px]"><%= t('title-presentation') %></span>
+  <%= t('presentation') %>
+</div>
+<div class="my-20">
+  <span class="flex text-center justify-center font-body font-bold text-[30px] mb-16 z-[100]"><%= t('experience') %></span>
+  <%= render 'shared/carousel' %>
 </div>

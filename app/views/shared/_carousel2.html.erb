@@ -1,96 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <title>Swiper demo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-  <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-
-  <!-- Demo styles -->
-  <style>
-    html,
-    body {
-      position: relative;
-      height: 100%;
-    }
-
-    body {
-      background: #eee;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      color: #000;
-      margin: 0;
-      padding: 0;
-    }
-
-    .swiper {
-      width: 100%;
-      height: 100%;
-    }
-
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .swiper-slide img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .swiper {
-      margin-left: auto;
-      margin-right: auto;
-    }
-  </style>
-</head>
-
-<body>
-  <!-- Swiper -->
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">Slide 1</div>
-      <div class="swiper-slide">Slide 2</div>
-      <div class="swiper-slide">Slide 3</div>
-      <div class="swiper-slide">Slide 4</div>
-      <div class="swiper-slide">Slide 5</div>
-      <div class="swiper-slide">Slide 6</div>
-      <div class="swiper-slide">Slide 7</div>
-      <div class="swiper-slide">Slide 8</div>
-      <div class="swiper-slide">Slide 9</div>
+<div>
+  <div>
+    <div>
+      <div data-controller="title" data-action="scroll@window->title#updateTitleSize">
+        <h1 class="title text-center mt-[100vh]">
+          <span class="font-light"><%= t('firstname') %></span>
+          <span class="font-bold"><%= t('lastname') %></span>
+        </h1>
+      </div>
     </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-pagination"></div>
+    <% if false %>
+      <div class="pt-4 arrow flex justify-center">
+        <div class="4xsm:ml-8 4xsm:text-xs 2xsm:text-base 2xsm:ml-8 md:ml-0 mt-10 4xsm:flex-1 4xsm:align-center md:flex-none font-bold pt-8">
+          <%= t('who') %>
+        </div>
+        <div class="flex-1 align-center md:flex-none">
+          <a class="link" href="#">
+            <span class="link__arrow">
+              <span></span>
+              <span></span>
+            </span>
+            <span class="link__line"></span>
+          </a>
+        </div>
+        <div class="4xsm:mr-8 4xsm:text-xs 2xsm:text-base 2xsm:mr-8 md:mr-0 mt-10 flex-1 align-center md:flex-none font-bold pt-8">
+          <%= t('cv') %>
+        </div>
+      </div>
+    <% end %>
   </div>
-
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
-  <!-- Initialize Swiper -->
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      loop: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-  </script>
-</body>
-
-</html>
+  <div class="pt-44 mx-10 text-center">
+    <h2><%= t('presentation') %></h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita temporibus deleniti sapiente consequatur nesciunt commodi non, provident, rem ducimus, repudiandae porro iure eius at in quasi architecto voluptatem aspernatur nemo tenetur repellat quam? Magni, temporibus vero eos nemo molestias cupiditate sequi architecto expedita dolorem quidem sed cumque at doloremque qui facilis quos voluptates tempore quasi reprehenderit officiis fuga quaerat deserunt numquam soluta. Quo inventore quia veniam? Perferendis obcaecati magni temporibus nihil, quae corrupti quasi minus? Unde quas saepe recusandae velit magni repellendus? Ducimus eveniet itaque illo dolorum, cumque, atque sunt fugit rerum temporibus aliquam odit in aperiam! Non nostrum quam ducimus, dolorum quas beatae enim deleniti animi unde. Perferendis sit quae cupiditate adipisci soluta ex quasi nihil laborum ratione excepturi fuga omnis dolorem, quisquam, aliquam quas et asperiores? Aspernatur soluta nostrum, delectus ratione atque alias vero excepturi nesciunt expedita ipsam iure, nulla, unde in quaerat quae repellendus dignissimos voluptas! Unde autem deserunt pariatur veritatis.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita temporibus deleniti sapiente consequatur nesciunt commodi non, provident, rem ducimus, repudiandae porro iure eius at in quasi architecto voluptatem aspernatur nemo tenetur repellat quam? Magni, temporibus vero eos nemo molestias cupiditate sequi architecto expedita dolorem quidem sed cumque at doloremque qui facilis quos voluptates tempore quasi reprehenderit officiis fuga quaerat deserunt numquam soluta. Quo inventore quia veniam? Perferendis obcaecati magni temporibus nihil, quae corrupti quasi minus? Unde quas saepe recusandae velit magni repellendus? Ducimus eveniet itaque illo dolorum, cumque, atque sunt fugit rerum temporibus aliquam odit in aperiam! Non nostrum quam ducimus, dolorum quas beatae enim deleniti animi unde. Perferendis sit quae cupiditate adipisci soluta ex quasi nihil laborum ratione excepturi fuga omnis dolorem, quisquam, aliquam quas et asperiores? Aspernatur soluta nostrum, delectus ratione atque alias vero excepturi nesciunt expedita ipsam iure, nulla, unde in quaerat quae repellendus dignissimos voluptas! Unde autem deserunt pariatur veritatis.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita temporibus deleniti sapiente consequatur nesciunt commodi non, provident, rem ducimus, repudiandae porro iure eius at in quasi architecto voluptatem aspernatur nemo tenetur repellat quam? Magni, temporibus vero eos nemo molestias cupiditate sequi architecto expedita dolorem quidem sed cumque at doloremque qui facilis quos voluptates tempore quasi reprehenderit officiis fuga quaerat deserunt numquam soluta. Quo inventore quia veniam? Perferendis obcaecati magni temporibus nihil, quae corrupti quasi minus? Unde quas saepe recusandae velit magni repellendus? Ducimus eveniet itaque illo dolorum, cumque, atque sunt fugit rerum temporibus aliquam odit in aperiam! Non nostrum quam ducimus, dolorum quas beatae enim deleniti animi unde. Perferendis sit quae cupiditate adipisci soluta ex quasi nihil laborum ratione excepturi fuga omnis dolorem, quisquam, aliquam quas et asperiores? Aspernatur soluta nostrum, delectus ratione atque alias vero excepturi nesciunt expedita ipsam iure, nulla, unde in quaerat quae repellendus dignissimos voluptas! Unde autem deserunt pariatur veritatis.</p>
+    <div class="mt-32">
+      <%= render 'shared/carousel' %>
+    </div>
+  </div>
+</div>

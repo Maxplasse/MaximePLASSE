@@ -10,10 +10,6 @@
   <!-- Demo styles -->
   <style>
     html,
-    body {
-      position: relative;
-      height: 100%;
-    }
 
     body {
       background: #eee;
@@ -21,22 +17,21 @@
       font-size: 14px;
       color: #000;
       margin: 0;
-      padding: 0;
+      padding: 0px 4px;
     }
 
     body {
-      background: #fff;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      background: #FAF9F7;
       font-size: 14px;
       color: #000;
       margin: 0;
-      padding: 0;
+      padding: 0px 4px;
     }
 
     html,
     body {
       position: relative;
-      height: 100%;
+
     }
 
     body {
@@ -54,8 +49,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 18px;
+      border-radius: 8px;
       font-size: 22px;
+      padding: 0px 10px;
       font-weight: bold;
       color: #fff;
     }
@@ -106,17 +102,17 @@
   <!-- Swiper -->
 
   <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">Slide 1</div>
-      <div class="swiper-slide">Slide 2</div>
-      <div class="swiper-slide">Slide 3</div>
-      <div class="swiper-slide">Slide 4</div>
-      <div class="swiper-slide">Slide 5</div>
-      <div class="swiper-slide">Slide 6</div>
-      <div class="swiper-slide">Slide 7</div>
-      <div class="swiper-slide">Slide 8</div>
-      <div class="swiper-slide">Slide 9</div>
+    <div class="swiper-wrapper text-center">
+      <div class="swiper-slide"><%= t('slide1-title') %></div>
+      <div class="swiper-slide"><%= t('slide2-title') %></div>
+      <div class="swiper-slide"><%= t('slide3-title') %></div>
+      <div class="swiper-slide"><%= t('slide4-title') %></div>
+      <div class="swiper-slide"><%= t('slide5-title') %></div>
     </div>
+  </div>
+
+  <div id="activeCardText" class="active-card-text">
+    Blablablabla: Slide 1 text goes here
   </div>
 
   <!-- Swiper JS -->
@@ -127,6 +123,21 @@
     var swiper = new Swiper(".mySwiper", {
       effect: "cards",
       grabCursor: true,
+      on: {
+        slideChange: function () {
+          // Array of text for each slide
+          var slideTexts = [
+            "Blablablabla: Slide 1 text goes here",
+            "Blibliblibli: Slide 2 text goes here",
+            "Your custom text for Slide 3",
+            "Your custom text for Slide 4",
+            "Your custom text for Slide 5",
+          ];
+
+          // Update the additional text section with the active slide text
+          document.getElementById("activeCardText").innerText = slideTexts[this.activeIndex];
+        },
+      },
     });
   </script>
 </body>

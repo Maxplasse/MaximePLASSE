@@ -13,9 +13,13 @@ module.exports = {
         title: ['Poppins', 'sans-serif'],
         body: ['sans-serif'],
       },
+      zIndex: {
+        '100': '100',
+      }
     },
     colors: {
       backgroundcolor: "#FAF9F7",
+      test: "#008000",
       black: "#212529",
     },
     screens: {
