@@ -21,6 +21,11 @@ module.exports = {
       backgroundcolor: "#FAF9F7",
       test: "#008000",
       black: "#212529",
+      green: "#808F85",
+      rosy: "#CC978E",
+      magenta: "#912F56",
+      purple: "#521945",
+      indogo: "#0C4767",
     },
     screens: {
       '4xsm': '375px',
