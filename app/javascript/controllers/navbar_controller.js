@@ -59,14 +59,29 @@ export default class extends Controller {
       scrollPositionThreshold = currentConfig.smallHeightScrollPosition;
     }
 
-    if (currentConfig && scrollAmount > (windowHeight - scrollPositionThreshold)) {
-      this.element.classList.add("bg-backgroundcolor");
-      this.titleTarget.classList.remove("hidden");
-    } else {
-      this.element.classList.remove("bg-backgroundcolor");
-      this.titleTarget.classList.add("hidden");
+    if (currentConfig) {
+      if (scrollAmount <= (scrollPositionThreshold - 100)) {
+        this.element.classList.add("bg-transparent");
+        this.element.classList.remove("bg-backgroundcolor");
+        this.titleTarget.classList.add("hidden");
+      } else if (scrollAmount <= scrollPositionThreshold) {
+        this.element.classList.remove("bg-transparent");
+        this.element.classList.add("bg-backgroundcolor");
+        this.titleTarget.classList.remove("hidden");
+      } else if (scrollAmount <= (scrollPositionThreshold + 600)) {
+        // Begin to make the navbar transparent again
+        const transparencyProgress = (scrollAmount - scrollPositionThreshold) / 600;
+        this.element.style.backgroundColor = `rgba(250, 249, 247, ${1 - transparencyProgress})`;
+        this.titleTarget.classList.remove("hidden");
+      } else {
+        // Fully transparent
+        this.element.style.backgroundColor = "rgba(250, 249, 247, 0)";
+        this.titleTarget.classList.remove("hidden");
+      }
     }
   }
+
+
 
   handleScroll() {
     const scrollAmount = window.scrollY;
