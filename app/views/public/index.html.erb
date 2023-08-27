@@ -7,10 +7,10 @@
   </div>
   <div class="mt-[-40px] arrow flex justify-center">
     <div class="4xsm:ml-8 4xsm:text-xs 2xsm:text-base 2xsm:ml-8 md:ml-0 mt-10 4xsm:flex-1 4xsm:align-center md:flex-none font-bold pt-8">
-      <%= t('who') %>
+      <a href="#presentation-section"><%= t('who') %></a>
     </div>
     <div class="flex-1 align-center md:flex-none">
-      <a class="link" href="#">
+      <a class="link" href="#presentation-section">
         <span class="link__arrow">
           <span></span>
           <span></span>
@@ -19,15 +19,27 @@
       </a>
     </div>
     <div class="4xsm:mr-8 4xsm:text-xs 2xsm:text-base 2xsm:mr-8 md:mr-0 mt-10 flex-1 align-center md:flex-none font-bold pt-8">
-      <%= t('cv') %>
+      <a href="#"><%= t('cv') %></a>
     </div>
   </div>
 </div>
-<div class="text-black mx-16 font-body">
-  <span class="text-[40px]"><%= t('title-presentation') %></span>
-  <%= t('presentation') %>
-</div>
+<section id="presentation-section">
+  <div class="text-black mx-16 font-body">
+    <span class="text-[40px]"><%= t('title-presentation') %></span>
+    <%= t('presentation') %>
+  </div>
+</section>
 <div class="my-20">
   <span class="flex text-center justify-center font-body font-bold text-[30px] mb-16 z-[100]"><%= t('experience') %></span>
   <%= render 'shared/carousel' %>
 </div>
+
+<script>
+  function scrollToSection(sectionId, event) {
+    event.preventDefault(); // Prevent the default link behavior
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+</script>

@@ -35,78 +35,38 @@ export default class extends Controller {
   }
 
   updateNavbar() {
-    if (window.matchMedia("(max-width: 375px)").matches) {
-      if (window.scrollY > (window.innerHeight-380)) {
-        this.element.classList.add("bg-backgroundcolor")
-        this.titleTarget.classList.remove("hidden")
-        // this.titleTarget.classList.add("text-black")
-      } else {
-        this.element.classList.remove("bg-backgroundcolor")
-        this.titleTarget.classList.add("hidden")
-        // this.titleTarget.classList.remove("text-black")
-      }
-    } else if (window.matchMedia("(max-width: 390px)").matches) {
-      if (window.scrollY > (window.innerHeight-385)) {
-        this.element.classList.add("bg-backgroundcolor")
-        this.titleTarget.classList.remove("hidden")
-        // this.titleTarget.classList.add("text-black")
-      } else {
-        this.element.classList.remove("bg-backgroundcolor")
-        this.titleTarget.classList.add("hidden")
-        // this.titleTarget.classList.remove("text-black")
-      }
-    } else if (window.matchMedia("(max-width: 414px)").matches) {
-      if (window.scrollY > (window.innerHeight-530)) {
-        this.element.classList.add("bg-backgroundcolor")
-        this.titleTarget.classList.remove("hidden")
-        // this.titleTarget.classList.add("text-black")
-      } else {
-        this.element.classList.remove("bg-backgroundcolor")
-        this.titleTarget.classList.add("hidden")
-        // this.titleTarget.classList.remove("text-black")
-      }
-    } else if (window.matchMedia("(max-width: 768px)").matches) {
-      if (window.scrollY > (window.innerHeight-360)) {
-        this.element.classList.add("bg-backgroundcolor")
-        this.titleTarget.classList.remove("hidden")
-        // this.titleTarget.classList.add("text-black")
-      } else {
-        this.element.classList.remove("bg-backgroundcolor")
-        this.titleTarget.classList.add("hidden")
-        // this.titleTarget.classList.remove("text-black")
-      }
-    } else if (window.matchMedia("(max-width: 992px)").matches){
-      if (window.scrollY > (window.innerHeight-360)) {
-        this.element.classList.add("bg-backgroundcolor")
-        this.titleTarget.classList.remove("hidden")
-        // this.titleTarget.classList.add("text-black")
-      } else {
-        this.element.classList.remove("bg-backgroundcolor")
-        this.titleTarget.classList.add("hidden")
-        // this.titleTarget.classList.remove("text-black")
-      }
-    } else if (window.matchMedia("(max-width: 1200px)").matches){
-      if (window.scrollY > (window.innerHeight-315)) {
-        this.element.classList.add("bg-backgroundcolor")
-        this.titleTarget.classList.remove("hidden")
-        // this.titleTarget.classList.add("text-black")
-      } else {
-        this.element.classList.remove("bg-backgroundcolor")
-        this.titleTarget.classList.add("hidden")
-        // this.titleTarget.classList.remove("text-black")
-      }
-    } else {
-      if (window.scrollY > (window.innerHeight-315)) {
-        this.element.classList.add("bg-backgroundcolor")
-        this.titleTarget.classList.remove("hidden")
-        // this.titleTarget.classList.add("text-black")
-      } else {
-        this.element.classList.remove("bg-backgroundcolor")
-        this.titleTarget.classList.add("hidden")
-        // this.titleTarget.classList.remove("text-black")
-      }
+    const scrollAmount = window.scrollY;
+    const windowHeight = window.innerHeight;
+
+    // Define an array of objects for different device widths and scroll positions
+    const deviceConfig = [
+      { maxWidth: 375, scrollPosition: 380, smallHeightScrollPosition: 350 },
+      { maxWidth: 390, scrollPosition: 385, smallHeightScrollPosition: 350 },
+      { maxWidth: 414, scrollPosition: 530, smallHeightScrollPosition: 510 },
+      { maxWidth: 768, scrollPosition: 360, smallHeightScrollPosition: 330 },
+      { maxWidth: 992, scrollPosition: 360, smallHeightScrollPosition: 330 },
+      { maxWidth: 1200, scrollPosition: 320, smallHeightScrollPosition: 315 },
+      { maxWidth: 2600, scrollPosition: 320, smallHeightScrollPosition: 320 },
+      // Add more as needed
+    ];
+
+    // Find the appropriate device configuration
+    const currentConfig = deviceConfig.find(config => window.matchMedia(`(max-width: ${config.maxWidth}px)`).matches);
+
+    let scrollPositionThreshold = currentConfig.scrollPosition;
+
+    if (windowHeight <= 600) {
+      scrollPositionThreshold = currentConfig.smallHeightScrollPosition;
     }
-  };
+
+    if (currentConfig && scrollAmount > (windowHeight - scrollPositionThreshold)) {
+      this.element.classList.add("bg-backgroundcolor");
+      this.titleTarget.classList.remove("hidden");
+    } else {
+      this.element.classList.remove("bg-backgroundcolor");
+      this.titleTarget.classList.add("hidden");
+    }
+  }
 
   handleScroll() {
     const scrollAmount = window.scrollY;
@@ -114,8 +74,25 @@ export default class extends Controller {
 
     // Adjust these values as needed
     const startScroll = 250; // The scroll position where the effect starts
-    const moveFactor = 0.8;   // Speed of the movement
     const endScroll = 600;
+
+    const windowWidth = window.innerWidth;
+
+    let moveFactor = 0.8; // Default moveFactor for larger screens
+
+    if (windowWidth <= 390) {
+      moveFactor = 0.3;
+    } else if (windowWidth <= 414) {
+      moveFactor = 0.25;
+    } else if (windowWidth <= 768) {
+      moveFactor = 0.5;
+    } else if (windowWidth <= 992) {
+      moveFactor = 0.65;
+    } else if (windowWidth <= 1200) {
+      moveFactor = 0.75;
+    } else {
+      moveFactor = 0.8;
+    }
 
     if (scrollAmount > startScroll) {
       const opacity = 1 - (Math.min(scrollAmount - startScroll, endScroll - startScroll) / (endScroll - startScroll));

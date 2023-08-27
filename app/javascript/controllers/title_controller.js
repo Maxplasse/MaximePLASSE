@@ -1,77 +1,58 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
+  connect() {
+    this.setInitialFontSize();
+    window.addEventListener("scroll", this.updateTitleSize.bind(this));
+  }
 
-  initialize() {
-    // min width 1201px
-    if (window.matchMedia("(max-width: 414px)").matches) {
-      this.element.style.fontSize = `2rem`;
-    } else if (window.matchMedia("(max-width: 768px)").matches) {
-      this.element.style.fontSize = `4rem`;
-    } else if (window.matchMedia("(max-width: 992px)").matches){
-      this.element.style.fontSize = `4rem`;
-    } else if (window.matchMedia("(max-width: 1200px)").matches){
-      this.element.style.fontSize = `4rem`;
+  setInitialFontSize() {
+    const windowWidth = window.innerWidth;
+    let initialFontSize;
+
+    if (windowWidth <= 375) {
+      initialFontSize = 2.7;
+    } else if (windowWidth <= 390) {
+      initialFontSize = 2.8;
+    } else if (windowWidth <= 414) {
+      initialFontSize = 3;
+    } else if (windowWidth <= 768) {
+      initialFontSize = 4;
+    } else if (windowWidth <= 992) {
+      initialFontSize = 5;
+    } else if (windowWidth <= 1200) {
+      initialFontSize = 5;
     } else {
-      this.element.style.fontSize = `5rem`;
+      initialFontSize = 6.2;
     }
+
+    this.element.style.fontSize = `${initialFontSize}rem`;
   }
 
   updateTitleSize() {
-    const scrolled = (window.scrollY)/(window.innerHeight-250)
+    const scrolled = window.scrollY / (window.innerHeight - 250);
+    const windowWidth = window.innerWidth;
 
-    // min width 1201px
-    const maxFontSize = 5
-    const minFontSize = 1.7
+    const fontSizeRanges = [
+      { maxWidth: 375, minFontSize: 0.3, maxFontSize: 2.7 },
+      { maxWidth: 390, minFontSize: 0.3, maxFontSize: 2.8 },
+      { maxWidth: 414, minFontSize: 0, maxFontSize: 3 },
+      { maxWidth: 768, minFontSize: 0.3, maxFontSize: 4 },
+      { maxWidth: 992, minFontSize: 0.3, maxFontSize: 5 },
+      { maxWidth: 1200, minFontSize: 1.5, maxFontSize: 5 },
+      { maxWidth: 2700, minFontSize: 1.5, maxFontSize: 6.2 },
+    ];
 
-    // min width 1200px
-    const maxFontSize2 = 5
-    const minFontSize2 = 1.7
+    let fontSize = 0;
 
-    // max width 992px
-    const maxFontSize1 = 5
-    const minFontSize1 = 0.3
-
-    // max width 768px
-    const maxFontSize3 = 4
-    const minFontSize3 = 0.3
-
-    // max width 414px
-    const maxFontSize4 = 3
-    const minFontSize4 = 0
-
-    // max width 390px
-    const maxFontSize5 = 2.8
-    const minFontSize5 = 0.3
-
-    // max width 375px
-    const maxFontSize6 = 2.7
-    const minFontSize6 = 0.3
-
-
-    // fontSizeOutput(scrolled)
-    if (window.matchMedia("(max-width: 375px)").matches) {
-      const fontSize = scrolled >= 0 && scrolled <= 1 ? ((1 - scrolled) * (maxFontSize6 - minFontSize6)) + minFontSize6 : minFontSize6
-      this.element.style.fontSize = `${fontSize}rem`;
-    } else if (window.matchMedia("(max-width: 390px)").matches) {
-      const fontSize = scrolled >= 0 && scrolled <= 1 ? ((1 - scrolled) * (maxFontSize5 - minFontSize5)) + minFontSize5 : minFontSize5
-      this.element.style.fontSize = `${fontSize}rem`;
-    } else if (window.matchMedia("(max-width: 414px)").matches) {
-      const fontSize = scrolled >= 0 && scrolled <= 1 ? ((1 - scrolled) * (maxFontSize4 - minFontSize4)) + minFontSize4 : minFontSize4
-      this.element.style.fontSize = `${fontSize}rem`;
-    } else if (window.matchMedia("(max-width: 768px)").matches) {
-      const fontSize = scrolled >= 0 && scrolled <= 1 ? ((1 - scrolled) * (maxFontSize3 - minFontSize3)) + minFontSize3 : minFontSize3
-      this.element.style.fontSize = `${fontSize}rem`;
-    } else if (window.matchMedia("(max-width: 992px)").matches){
-      const fontSize = scrolled >= 0 && scrolled <= 1 ? ((1 - scrolled) * (maxFontSize1 - minFontSize1)) + minFontSize1 : minFontSize1
-      this.element.style.fontSize = `${fontSize}rem`;
-    } else if (window.matchMedia("(max-width: 1200px)").matches){
-      const fontSize = scrolled >= 0 && scrolled <= 1 ? ((1 - scrolled) * (maxFontSize2 - minFontSize2)) + minFontSize2 : minFontSize2
-      this.element.style.fontSize = `${fontSize}rem`;
-    } else {
-      const fontSize = scrolled >= 0 && scrolled <= 1 ? ((1 - scrolled) * (maxFontSize - minFontSize)) + minFontSize : minFontSize
-      this.element.style.fontSize = `${fontSize}rem`;
+    for (const { maxWidth, minFontSize, maxFontSize } of fontSizeRanges) {
+      if (windowWidth <= maxWidth) {
+        fontSize = scrolled >= 0 && scrolled <= 1 ? ((1 - scrolled) * (maxFontSize - minFontSize)) + minFontSize : minFontSize;
+        break;
+      }
     }
+
+    this.element.style.fontSize = `${fontSize}rem`;
   }
 
   switchLanguage(event) {

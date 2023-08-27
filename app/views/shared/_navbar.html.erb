@@ -5,15 +5,17 @@
     </a>
   </div>
   <div data-navbar-target="title" class="hidden" data-navbar-target="text">
-    <h1 data-navbar-target="text" data-action="scroll->navbar#handleScroll" class="4xsm:text-[1.1rem] 4xsm:mr-[45px] 3xsm:mr-[40px] 2xsm:text-[1.35rem] md:text-[1.9rem] lg:text-[2.45rem] font-title md:mr-[50px]">
+    <h1 data-navbar-target="text" data-action="scroll->navbar#handleScroll" class="4xsm:text-[1.1rem] 4xsm:mr-[25px] 3xsm:mr-[0px] 2xsm:text-[1.35rem] md:text-[1.9rem] lg:text-[2.45rem] font-title md:mr-[50px]">
       <span class="font-light"><%= t('firstname') %></span>
       <span class="font-bold"><%= t('lastname') %></span>
     </h1>
   </div>
-  <div class="absolute 4xsm:hidden md:block md:right-24 md:bottom-2.5">
-    <div data-controller="title">
-      <button data-action="click->title#switchLanguage" class="4xsm:text-xs md:text-sm" data-lang="en">EN</button>
-      <button data-action="click->title#switchLanguage" class="4xsm:text-xs md:text-sm" data-lang="fr">FR</button>
+  <div class="absolute 4xsm:hidden md:block md:right-24 md:bottom-[33px]">
+    <div>
+      <div data-controller="language">
+        <button data-action="click->language#switchLanguage" class="4xsm:text-xs md:text-sm" data-lang="en">EN</button>
+        <button data-action="click->language#switchLanguage" class="4xsm:text-xs md:text-sm" data-lang="fr">FR</button>
+      </div>
     </div>
   </div>
   <div class="block">
