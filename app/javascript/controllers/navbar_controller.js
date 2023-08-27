@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
   static get targets() {
-    return [ "navbarContainer", "icon", "link", "title", "text" ]
+    return [ "navbarContainer", "icon", "link", "title", "text", "language" ]
   }
   connect() {
     this.handleScroll = this.handleScroll.bind(this);
@@ -60,27 +60,26 @@ export default class extends Controller {
     }
 
     if (currentConfig) {
-      if (scrollAmount <= (scrollPositionThreshold - 100)) {
-        this.element.classList.add("bg-transparent");
+      // Calculate the scroll position to trigger transparency (half of viewport height)
+      const transparentScrollPosition = windowHeight * 0.8;
+
+      if (scrollAmount > transparentScrollPosition) {
         this.element.classList.remove("bg-backgroundcolor");
-        this.titleTarget.classList.add("hidden");
-      } else if (scrollAmount <= scrollPositionThreshold) {
-        this.element.classList.remove("bg-transparent");
+        this.element.classList.add("bg-transparent");
+        this.titleTarget.classList.remove("hidden");
+      } else if (scrollAmount > (windowHeight - scrollPositionThreshold)) {
         this.element.classList.add("bg-backgroundcolor");
+        this.element.classList.remove("bg-transparent");
         this.titleTarget.classList.remove("hidden");
-      } else if (scrollAmount <= (scrollPositionThreshold + 600)) {
-        // Begin to make the navbar transparent again
-        const transparencyProgress = (scrollAmount - scrollPositionThreshold) / 600;
-        this.element.style.backgroundColor = `rgba(250, 249, 247, ${1 - transparencyProgress})`;
-        this.titleTarget.classList.remove("hidden");
+        this.languageTarget.classList.add("text-backgroundcolor");
       } else {
-        // Fully transparent
-        this.element.style.backgroundColor = "rgba(250, 249, 247, 0)";
-        this.titleTarget.classList.remove("hidden");
+        this.element.classList.remove("bg-backgroundcolor");
+        this.element.classList.remove("bg-transparent");
+        this.languageTarget.classList.remove("text-backgroundcolor");
+        this.titleTarget.classList.add("hidden");
       }
     }
   }
-
 
 
   handleScroll() {
