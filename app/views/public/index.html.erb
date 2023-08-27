@@ -25,26 +25,32 @@
 </div>
 <section id="presentation-section" class="md:flex my-20 bg-black mx-10 rounded">
   <div class="text-backgroundcolor flex mx-16">
-    <div class="flex-1 text-[25px] mb-8 font-bold tracking-tighter mt-8 ml-8">
-      <%= t('title-presentation') %>
+    <div class="flex flex-col ml-8">
+      <div class="text-[25px] mb-8 font-bold tracking-tighter mt-8">
+        <%= t('title-presentation') %>
+      </div>
+      <div>
+        <%= image_tag ("Max.png"), class: "" %>
+      </div>
     </div>
-    <div class="mx-[20vw] text-[32px] text-sm mt-12 py-8 leading-[1]">
+    <div class="mx-[16vw] text-[32px] mt-12 py-8 leading-[1] mb-8">
       <%= t('presentation') %>
     </div>
   </div>
 </section>
-<div class="my-10">
-  <span class="flex text-center justify-center font-body font-bold text-[30px] mb-8 z-[100]"><%= t('experience') %></span>
-  <%= render 'shared/carousel' %>
+<div class="text-black mx-16 my-10">
+  <span class="text-[25px] mb-8 font-bold tracking-tighter mt-8 ml-16"><%= t('experience') %></span>
+  <div class="mt-12">
+    <%= render 'shared/carousel' %>
+  </div>
 </div>
 
 <script>
   function scrollToSection(sectionId, event) {
-    event.preventDefault(); // Prevent the default link behavior
+    event.preventDefault();
     const section = document.getElementById(sectionId);
     if (section) {
-      // Adjust the offset to scroll a bit less than the top
-      const offset = 150; // Adjust this value as needed
+      const offset = -10;
       const scrollPosition = section.offsetTop - offset;
       window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
     }

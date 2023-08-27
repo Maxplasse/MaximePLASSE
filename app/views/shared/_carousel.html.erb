@@ -12,8 +12,6 @@
     html,
 
     body {
-      background: #eee;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
       font-size: 14px;
       color: #000;
       margin: 0;
@@ -43,6 +41,9 @@
     .swiper {
       width: 240px;
       height: 320px;
+      display: flex;
+      justify-content: space-around;
+      position: relative;
     }
 
     .swiper-slide {
@@ -54,6 +55,21 @@
       padding: 0px 10px;
       font-weight: bold;
       color: #fff;
+    }
+
+    .active-card-text {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 10px; /* Adjust the padding value as needed */
+    }
+
+    .active-card-text-left {
+      right: 50;
+    }
+
+    .active-card-text-right {
+      left: 50;
     }
 
     .swiper-slide:nth-child(1n) {
@@ -82,6 +98,9 @@
   <!-- Swiper -->
 
   <div class="swiper mySwiper">
+    <div id="activeCardTextLeft" class="active-card-text active-card-text-left">
+      Blablablabla: Slide 1 text goes here
+    </div>
     <div class="swiper-wrapper text-center">
       <div class="swiper-slide"><%= t('slide1-title') %></div>
       <div class="swiper-slide"><%= t('slide2-title') %></div>
@@ -89,11 +108,11 @@
       <div class="swiper-slide"><%= t('slide4-title') %></div>
       <div class="swiper-slide"><%= t('slide5-title') %></div>
     </div>
+    <div id="activeCardTextRight" class="active-card-text active-card-text-right">
+      Blab: Slide 1 text goes here
+    </div>
   </div>
 
-  <div id="activeCardText" class="active-card-text">
-    Blablablabla: Slide 1 text goes here
-  </div>
 
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
@@ -106,7 +125,14 @@
       on: {
         slideChange: function () {
           // Array of text for each slide
-          var slideTexts = [
+          var slideTextsLeft = [
+            "Blablablabla: Slide 1 text goes here",
+            "Blibliblibli: Slide 2 text goes here",
+            "Your custom text for Slide 3",
+            "Your custom text for Slide 4",
+            "Your custom text for Slide 5",
+          ];
+          var slideTextsRight = [
             "Blablablabla: Slide 1 text goes here",
             "Blibliblibli: Slide 2 text goes here",
             "Your custom text for Slide 3",
@@ -115,7 +141,8 @@
           ];
 
           // Update the additional text section with the active slide text
-          document.getElementById("activeCardText").innerText = slideTexts[this.activeIndex];
+          document.getElementById("activeCardTextLeft").innerText = slideTextsLeft[this.activeIndex];
+          document.getElementById("activeCardTextRight").innerText = slideTextsRight[this.activeIndex];
         },
       },
     });
