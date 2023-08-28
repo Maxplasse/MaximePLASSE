@@ -1,49 +1,82 @@
-<div class="h-[80vh] flex flex-col justify-center items-center font-title">
-  <div data-controller="title" data-action="scroll@window->title#updateTitleSize">
-    <h1>
-      <span class="font-thin"><%= t('firstname') %></span>
-      <span class="font-bold"><%= t('lastname') %></span>
-    </h1>
-  </div>
-  <div class="mt-[-40px] arrow flex justify-center">
-    <div class="4xsm:ml-8 4xsm:text-xs 2xsm:text-base 2xsm:ml-8 md:ml-0 mt-10 4xsm:flex-1 4xsm:align-center md:flex-none font-bold pt-8">
-      <a href="#" onclick="scrollToSection('presentation-section', event)"><%= t('who') %></a>
-    </div>
-    <div class="flex-1 align-center md:flex-none">
-      <a class="link" href="#presentation-section" onclick="scrollToSection('presentation-section', event)">
-        <span class="link__arrow">
-          <span></span>
-          <span></span>
-        </span>
-        <span class="link__line"></span>
-      </a>
-    </div>
-    <div class="4xsm:mr-8 4xsm:text-xs 2xsm:text-base 2xsm:mr-8 md:mr-0 mt-10 flex-1 align-center md:flex-none font-bold pt-8">
-      <a href="#"><%= t('cv') %></a>
-    </div>
-  </div>
-</div>
-<section id="presentation-section" class="md:flex my-20 bg-black mx-10 rounded">
-  <div class="text-backgroundcolor flex mx-16">
-    <div class="flex flex-col ml-8">
-      <div class="text-[25px] mb-8 font-bold tracking-tighter mt-8">
-        <%= t('title-presentation') %>
+<div>
+  <div class="bg-backgroundcolor rounded-b-[40px] mt-[-100px] pb-48">
+    <div class="h-[100vh] flex text-black flex-col justify-center items-center font-title md:mt-[30px]">
+      <div data-controller="title" data-action="scroll@window->title#updateTitleSize">
+        <h1>
+          <span class="font-thin"><%= t('firstname') %></span>
+          <span class="font-black"><%= t('lastname') %></span>
+        </h1>
       </div>
-      <div>
-        <%= image_tag ("Max.png"), class: "" %>
+      <div class="mt-[-40px] arrow flex justify-center">
+        <div class="text-black font-bold 4xsm:ml-8 4xsm:text-xs 2xsm:text-base 2xsm:ml-8 md:ml-0 md:text-xl mt-20 4xsm:flex-1 4xsm:align-center md:flex-none pt-8">
+          <a href="#" onclick="scrollToSection('presentation-section', event)"><%= t('who') %></a>
+        </div>
+        <div class="flex-1 align-center md:flex-none">
+          <a class="link" href="#presentation-section" onclick="scrollToSection('presentation-section', event)">
+            <span class="link__arrow">
+              <span></span>
+              <span></span>
+            </span>
+            <span class="link__line"></span>
+          </a>
+        </div>
+        <div class="text-black 4xsm:mr-8 4xsm:text-xs 2xsm:text-base 2xsm:mr-8 md:mr-0 md:text-xl mt-20 flex-1 align-center md:flex-none font-bold pt-8">
+          <a href="#"><%= t('cv') %></a>
+        </div>
       </div>
     </div>
-    <div class="mx-[16vw] text-[32px] mt-12 py-8 leading-[1] mb-8">
-      <%= t('presentation') %>
+    <section id="presentation-section" class="md:flex my-20 bg-black mx-[3.6rem] rounded md:px-5">
+      <div class="text-backgroundcolor flex mx-16">
+        <div class="flex flex-col ml-8 pl-4 mt-8">
+          <div class="text-[25px] mb-8 font-title tracking-tighter mt-8">
+            <%= t('about') %>
+          </div>
+          <div class="4xsm:h-32 4xsm:w-32 md:h-80 md:w-80">
+            <%= image_tag ("Max.png") %>
+          </div>
+          <div class="text-circle md:h-80 md:w-80 md:mb-20 md:mt-32">
+            <%= image_tag ("Text-circle-2.png") %>
+          </div>
+        </div>
+        <div class="flex flex-1 flex-col">
+          <div class="uppercase font-title font-light mx-[10vw] md:text-[30px] mt-12 py-8 leading-[1.4]">
+            <%= t('presentation') %>
+          </div>
+          <div class="uppercase font-title font-light mx-[10vw] text-[18px] py-8 leading-[1.4] mb-8">
+            <%= t('presentation2') %>
+          </div>
+          <div id="scrollingText" class="scrolling-text dotted-line-box uppercase font-title font-light mx-[8vw] text-[18px] py-8 leading-[1.4] md:mt-16">
+            <div class="section">
+              <%= t('current-focus') %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="text-black mx-16 mt-32">
+      <div class="text-[25px] font-title font-medium tracking-tighter ml-24"><%= t('experience') %></div>
+      <div class="mt-40">
+        <%= render 'shared/carousel' %>
+      </div>
     </div>
   </div>
-</section>
-<div class="text-black mx-16 my-10">
-  <span class="text-[25px] mb-8 font-bold tracking-tighter mt-8 ml-16"><%= t('experience') %></span>
-  <div class="mt-12">
-    <%= render 'shared/carousel' %>
+  <div class="bg-black mx-40 mt-32">
+    <div class="flex items-baseline mb-16 font-title text-backgroundcolor tracking-tighter mt-8">
+      <div class="text-[25px]">
+        <%= t('contact') %>
+      </div>
+      <div class="text-[14px] italic ml-4">
+        <%= t('contact-sub') %>
+      </div>
+    </div>
+    <%= render 'shared/board' %>
+  </div>
+  <div class="mt-40 mb-10 text-backgroundcolor mx-40 flex justify-between">
+    <a href="https://www.linkedin.com/in/maxime-plasse-35384460/" target="_blank">LINKEDIN</a>
+    <p class="italic text-sm">Designed and developped by Maxime Plasse</p>
   </div>
 </div>
+
 
 <script>
   function scrollToSection(sectionId, event) {
@@ -55,4 +88,48 @@
       window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
     }
   }
+
+  window.addEventListener('scroll', () => {
+    const image = document.querySelector('.text-circle');
+
+    const scrollY = window.scrollY;
+
+    const rotationAngle = scrollY * 0.5;
+
+    image.style.transform = `rotate(${rotationAngle}deg)`;
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll(".section");
+    const windowHeight = window.innerHeight;
+    const scrollStart = windowHeight; // Adjust the scroll start position as needed
+
+    const animateSections = () => {
+      sections.forEach((section, index) => {
+        const sectionTop = section.getBoundingClientRect().top;
+
+        if (sectionTop < scrollStart) {
+          const scrollDistance = Math.max(0, scrollStart - sectionTop);
+          const scrollProgress = Math.min(1, scrollDistance / windowHeight);
+
+          const lightness = 40 + Math.round(70 * scrollProgress); // Adjust the lightness value
+
+          const color = `hsl(0, 0%, ${lightness}%)`;
+
+          section.style.color = color;
+        } else {
+          section.style.color = "#FAF9F7";
+        }
+      });
+    };
+
+    animateSections(); // Call the function on initial load
+
+    // Call the function when scrolling
+    window.addEventListener("scroll", animateSections);
+  });
+
+
+
+
 </script>

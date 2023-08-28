@@ -46,7 +46,7 @@ export default class extends Controller {
       { maxWidth: 768, scrollPosition: 360, smallHeightScrollPosition: 330 },
       { maxWidth: 992, scrollPosition: 360, smallHeightScrollPosition: 330 },
       { maxWidth: 1200, scrollPosition: 320, smallHeightScrollPosition: 315 },
-      { maxWidth: 2600, scrollPosition: 320, smallHeightScrollPosition: 320 },
+      { maxWidth: 2600, scrollPosition: 350, smallHeightScrollPosition: 350 },
       // Add more as needed
     ];
 
@@ -71,11 +71,8 @@ export default class extends Controller {
         this.element.classList.add("bg-backgroundcolor");
         this.element.classList.remove("bg-transparent");
         this.titleTarget.classList.remove("hidden");
-        this.languageTarget.classList.add("text-backgroundcolor");
       } else {
         this.element.classList.remove("bg-backgroundcolor");
-        this.element.classList.remove("bg-transparent");
-        this.languageTarget.classList.remove("text-backgroundcolor");
         this.titleTarget.classList.add("hidden");
       }
     }

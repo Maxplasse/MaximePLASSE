@@ -10,8 +10,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        title2: ['Poppins', 'sans-serif'],
-        title: ['Roboto', 'sans-serif'],
+        Poppins: ['Poppins', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif'],
+        title2: ['Space', 'Grotesk'],
+        title: ['Inter'],
         body: ['sans-serif'],
       },
       zIndex: {
