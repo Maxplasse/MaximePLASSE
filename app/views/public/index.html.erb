@@ -8,7 +8,7 @@
         </h1>
       </div>
       <div class="mt-[-40px] arrow flex justify-center">
-        <div class="text-black font-bold 4xsm:ml-8 4xsm:text-xs 2xsm:text-base 2xsm:ml-8 md:ml-0 md:text-xl mt-20 4xsm:flex-1 4xsm:align-center md:flex-none pt-8">
+        <div class="text-black font-bold 4xsm:ml-8 4xsm:text-base 2xsm:ml-8 md:ml-0 md:text-xl mt-20 4xsm:flex-1 4xsm:align-center md:flex-none pt-8">
           <a href="#" onclick="scrollToSection('presentation-section', event)"><%= t('who') %></a>
         </div>
         <div class="flex-1 align-center md:flex-none">
@@ -20,13 +20,13 @@
             <span class="link__line"></span>
           </a>
         </div>
-        <div class="text-black 4xsm:mr-8 4xsm:text-xs 2xsm:text-base 2xsm:mr-8 md:mr-0 md:text-xl mt-20 flex-1 align-center md:flex-none font-bold pt-8">
+        <div class="text-black 4xsm:mr-8 4xsm:text-base 2xsm:mr-8 md:mr-0 md:text-xl mt-20 flex-1 align-center md:flex-none font-bold pt-8">
           <a href="#"><%= t('cv') %></a>
         </div>
       </div>
     </div>
-    <section id="presentation-section" class="4xsm:mx-4 md:flex my-20 bg-black md:mx-[3.6rem] rounded md:px-5">
-      <div class="text-backgroundcolor mx-16 md:flex">
+    <section id="presentation-section" class="4xsm:mx-4 4xsm:mt-32 md:mt-0 md:flex my-20 bg-black md:mx-[3.6rem] rounded md:px-5">
+      <div class="text-backgroundcolor 4xsm:mx-8 md:mx-16 md:flex">
         <div class="pl-4 mt-8 4xsm:ml-1 md:flex md:flex-col md:ml-8">
           <div class="4xsm:text-[20px] 4xsm:pt-12 4xsm:pb-6 2xsm:text-[21px] font-title tracking-tighter md:pb-0 md:text-[25px] md:pt-0 md:mb-8 md:mt-8">
             <%= t('about') %>
@@ -48,7 +48,7 @@
           <div class="text-circle2 4xsm:mx-auto 4xsm:h-48 4xsm:w-48 md:hidden">
             <%= image_tag ("Text-circle-2.png") %>
           </div>
-          <div id="scrollingText" class="scrolling-text dotted-line-box uppercase font-title font-light 4xsm:text-[10px] 4xsm:pb-10 md:pb-0 md:py-4 md:mx-[8vw] md:text-[18px] md:py-8 leading-[1.4] md:mt-16">
+          <div id="scrollingText" class="scrolling-text dotted-line-box uppercase font-title font-light 4xsm:text-[11px] 4xsm:pb-10 md:pb-0 md:py-4 md:mx-[8vw] md:text-[18px] md:py-8 leading-[1.4] md:mt-16">
             <div class="section">
               <%= t('current-focus') %>
             </div>
@@ -56,16 +56,16 @@
         </div>
       </div>
     </section>
-    <div class="text-black 4xsm:mt-16 md:mx-16 md:mt-32">
-      <div class="4xsm:text-[20px] 4xsm:ml-24 2xsm:text-[21px] md:text-[25px] font-title font-medium tracking-tighter md:ml-24"><%= t('experience') %></div>
+    <div class="text-black 4xsm:mt-16 4xsm:mx-8 md:mx-16 md:mt-32">
+      <div class="4xsm:text-[20px] 4xsm:ml-4 2xsm:text-[21px] md:text-[25px] font-title tracking-tighter md:ml-24"><%= t('experience') %></div>
       <div class="4xsm:mt-20 md:mt-40">
         <%= render 'shared/carousel' %>
       </div>
     </div>
   </div>
-  <div class="bg-black 4xsm:mt-20 4xsm:mx-10 md:mx-40 md:mt-32">
+  <div class="bg-black 4xsm:mt-20 4xsm:mx-14 md:mx-40 md:mt-32">
     <div class="flex items-baseline mb-16 font-title text-backgroundcolor tracking-tighter mt-8">
-      <div class="4xsm:text-[18px] md:text-[25px]">
+      <div class="4xsm:text-[20px] 2xsm:text-[21px] md:text-[25px]">
         <%= t('contact') %>
       </div>
       <div class="text-[14px] italic ml-4">

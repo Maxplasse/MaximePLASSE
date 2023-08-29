@@ -34,6 +34,45 @@ export default class extends Controller {
     }
   }
 
+  handleNavbarVisibility() {
+    const scrollAmount = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const windowWidth = window.innerWidth;
+
+    // Only apply the behavior for devices up to 414px width
+    if (windowWidth <= 414) {
+      // Define the scroll thresholds for hiding and showing the navbar
+      const hideThreshold = 800 * windowHeight / 414; // Hide navbar after scrolling down 800vh on mobile
+      const showThreshold = 10 * windowHeight / 414; // Show navbar when scrolling back up by 20vh on mobile
+
+      // Calculate the translateY value for the navbar container
+      let translateY;
+
+      if (scrollAmount > hideThreshold) {
+        // Apply a cubic easing function for faster disappearance
+        const distancePastThreshold = scrollAmount - hideThreshold;
+        const maxDistancePastThreshold = windowHeight / 8; // Adjust this value as needed
+        const progress = Math.min(distancePastThreshold / maxDistancePastThreshold, 1);
+        const cubicProgress = Math.pow(progress, 40); // Cubic easing
+        translateY = -1200 + (cubicProgress * 100);
+      } else if (scrollAmount < showThreshold) {
+        // Keep the navbar at translateY: 0
+        translateY = 0;
+      } else {
+        // Smoothly transition between show and hide thresholds
+        translateY = Math.min((scrollAmount - showThreshold) / (hideThreshold - showThreshold), 1) * -100;
+      }
+
+      // Apply the translateY value to the navbar container
+      this.navbarContainerTarget.style.transform = `translateY(${translateY}%)`;
+    } else {
+      // Reset the translateY for wider screens
+      this.navbarContainerTarget.style.transform = "translateY(0)";
+    }
+  }
+
+
+
   updateNavbar() {
     const scrollAmount = window.scrollY;
     const windowHeight = window.innerHeight;
@@ -45,8 +84,8 @@ export default class extends Controller {
       { maxWidth: 414, scrollPosition: 530, smallHeightScrollPosition: 500 },
       { maxWidth: 768, scrollPosition: 360, smallHeightScrollPosition: 330 },
       { maxWidth: 992, scrollPosition: 360, smallHeightScrollPosition: 330 },
-      { maxWidth: 1200, scrollPosition: 350, smallHeightScrollPosition: 320 },
-      { maxWidth: 2600, scrollPosition: 350, smallHeightScrollPosition: 320 },
+      { maxWidth: 1200, scrollPosition: 390, smallHeightScrollPosition: 350 },
+      { maxWidth: 2600, scrollPosition: 390, smallHeightScrollPosition: 350 },
       // Add more as needed
     ];
 
