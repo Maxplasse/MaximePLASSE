@@ -186,6 +186,30 @@
     }
   });
 
+  // Disable scrolling on the canvas element
+  canvas.addEventListener("touchstart", (e) => {
+    e.preventDefault(); // Prevent default touch event behavior
+  }, { passive: false });
+
+  // Enable scrolling when touch interaction ends
+  canvas.addEventListener("touchend", (e) => {
+    e.preventDefault(); // Prevent default touch event behavior
+  }, { passive: false });
+
+  canvas.addEventListener("touchmove", (e) => {
+    if (isPressed) {
+      e.preventDefault(); // Prevent default touch event behavior while drawing
+      const touch = e.touches[0];
+      const x2 = touch.clientX - canvas.getBoundingClientRect().left;
+      const y2 = touch.clientY - canvas.getBoundingClientRect().top;
+
+      drawCircle(x2, y2);
+      drawLine(x, y, x2, y2);
+      x = x2;
+      y = y2;
+    }
+  }, { passive: false });
+
   function drawCircle(x, y) {
     ctx.beginPath();
     ctx.arc(x, y, size, 0, Math.PI * 2);
