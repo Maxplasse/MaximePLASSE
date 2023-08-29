@@ -177,6 +177,53 @@
       padding: 10px 3px 3px 10px;
     }
 
+    .additional-text-container {
+      display: none;
+      border-radius: 10rem;
+      background: #b0b1b2;
+      padding: 5px 10px;
+      margin: 0px 400px;
+    }
+
+    .link-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .link-container a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+
+    .scrolling-text-container {
+      display: flex;
+      color: #FAF9F7;
+      border-radius: 10rem;
+      align-items: center;
+      overflow: hidden;
+      width: 200px;
+      background: #d1d1d1;
+      padding: 5px 10px;
+    }
+
+    .scrolling-text-link {
+      animation: scrollText 35s linear infinite;
+      animation-delay: -15s;
+      white-space: nowrap;
+    }
+
+    @keyframes scrollText {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
     @keyframes drawLine {
       0% {
         stroke-dashoffset: 200;
@@ -274,7 +321,12 @@
       </div>
     </div>
   </div>
-
+  <div class="justify-center additional-text-container font-title md:text-[12px] relative bottom-60 mx-auto md:text-bold" id="additionalTextContainer">
+    <div class="scrolling-text-container">
+      <p class="scrolling-text-link"><span class="px-4">https://www.foodclass.fr</span> <span class="px-4">https://www.foodclass.fr</span> <span>https://www.foodclass.fr</span></p>
+    </div>
+    <a href="https://www.foodclass.fr" target="_blank" class="link-container uppercase">visit</a>
+  </div>
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
@@ -306,6 +358,14 @@
           document.getElementById("activeCardTextRight").innerText = slideTextsRight[this.activeIndex];
           document.getElementById("activeCardTextLeftMobile").innerText = slideTextsLeft[this.activeIndex];
           document.getElementById("activeCardTextRightMobile").innerText = slideTextsRight[this.activeIndex];
+
+          var additionalTextContainer = document.getElementById("additionalTextContainer");
+
+          if (this.activeIndex === 1) {
+            additionalTextContainer.style.display = "flex";
+          } else {
+            additionalTextContainer.style.display = "none";
+          }
         },
       },
     });
