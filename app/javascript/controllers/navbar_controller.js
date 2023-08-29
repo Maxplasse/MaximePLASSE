@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
   static get targets() {
-    return [ "navbarContainer", "icon", "link", "title", "text", "language" ]
+    return [ "navbarContainer", "icon", "link", "title", "text", "language", "logo" ]
   }
   connect() {
     this.handleScroll = this.handleScroll.bind(this);
@@ -34,44 +34,6 @@ export default class extends Controller {
     }
   }
 
-  handleNavbarVisibility() {
-    const scrollAmount = window.scrollY;
-    const windowHeight = window.innerHeight;
-    const windowWidth = window.innerWidth;
-
-    // Only apply the behavior for devices up to 414px width
-    if (windowWidth <= 414) {
-      // Define the scroll thresholds for hiding and showing the navbar
-      const hideThreshold = 800 * windowHeight / 414; // Hide navbar after scrolling down 800vh on mobile
-      const showThreshold = 10 * windowHeight / 414; // Show navbar when scrolling back up by 20vh on mobile
-
-      // Calculate the translateY value for the navbar container
-      let translateY;
-
-      if (scrollAmount > hideThreshold) {
-        // Apply a cubic easing function for faster disappearance
-        const distancePastThreshold = scrollAmount - hideThreshold;
-        const maxDistancePastThreshold = windowHeight / 8; // Adjust this value as needed
-        const progress = Math.min(distancePastThreshold / maxDistancePastThreshold, 1);
-        const cubicProgress = Math.pow(progress, 40); // Cubic easing
-        translateY = -1200 + (cubicProgress * 100);
-      } else if (scrollAmount < showThreshold) {
-        // Keep the navbar at translateY: 0
-        translateY = 0;
-      } else {
-        // Smoothly transition between show and hide thresholds
-        translateY = Math.min((scrollAmount - showThreshold) / (hideThreshold - showThreshold), 1) * -100;
-      }
-
-      // Apply the translateY value to the navbar container
-      this.navbarContainerTarget.style.transform = `translateY(${translateY}%)`;
-    } else {
-      // Reset the translateY for wider screens
-      this.navbarContainerTarget.style.transform = "translateY(0)";
-    }
-  }
-
-
 
   updateNavbar() {
     const scrollAmount = window.scrollY;
@@ -79,8 +41,8 @@ export default class extends Controller {
 
     // Define an array of objects for different device widths and scroll positions
     const deviceConfig = [
-      { maxWidth: 375, scrollPosition: 430, smallHeightScrollPosition: 400 },
-      { maxWidth: 390, scrollPosition: 430, smallHeightScrollPosition: 400 },
+      { maxWidth: 375, scrollPosition: 435, smallHeightScrollPosition: 400 },
+      { maxWidth: 390, scrollPosition: 435, smallHeightScrollPosition: 400 },
       { maxWidth: 414, scrollPosition: 530, smallHeightScrollPosition: 500 },
       { maxWidth: 768, scrollPosition: 360, smallHeightScrollPosition: 330 },
       { maxWidth: 992, scrollPosition: 360, smallHeightScrollPosition: 330 },
@@ -121,9 +83,13 @@ export default class extends Controller {
   handleScroll() {
     const scrollAmount = window.scrollY;
     const textElement = this.textTarget;
+    const logoElement = this.logoTarget;
+    const languageElement = this.languageTarget;
 
     // Adjust these values as needed
-    const startScroll = 250; // The scroll position where the effect starts
+    const startScroll = 250; // The scroll position where the effect starts for text
+    const startScrollLogo = 250; // The scroll position where the effect starts for logo
+    const startScrollLanguage = 250; // The scroll position where the effect starts for language
     const endScroll = 600;
 
     const windowWidth = window.innerWidth;
@@ -133,7 +99,7 @@ export default class extends Controller {
     if (windowWidth <= 390) {
       moveFactor = 0.3;
     } else if (windowWidth <= 414) {
-      moveFactor = 0.25;
+      moveFactor = 0.8;
     } else if (windowWidth <= 768) {
       moveFactor = 0.5;
     } else if (windowWidth <= 992) {
@@ -147,10 +113,28 @@ export default class extends Controller {
     if (scrollAmount > startScroll) {
       const opacity = 1 - (Math.min(scrollAmount - startScroll, endScroll - startScroll) / (endScroll - startScroll));
       textElement.style.opacity = opacity;
-      textElement.style.transform = `translateX(-${(scrollAmount - startScroll) * moveFactor}px)`;
+
+      if (windowWidth <= 414) {
+        const logoTranslate = -(scrollAmount - startScrollLogo) * moveFactor;
+        const languageTranslate = (scrollAmount - startScrollLanguage) * moveFactor;
+        logoElement.style.transform = `translateX(${logoTranslate}px)`;
+        languageElement.style.transform = `translateX(${languageTranslate}px)`;
+
+        // Check if the language element is moving to the right and apply overflow hidden
+        if (languageTranslate > 0) {
+          document.body.style.overflowX = "hidden";
+        } else {
+          document.body.style.overflowX = "auto";
+        }
+      }
     } else {
-      textElement.style.transform = "translateX(0)";
       textElement.style.opacity = 1;
+      logoElement.style.transform = "translateX(0)";
+      languageElement.style.transform = "translateX(0)";
+      languageElement.style.position = "static";
+      document.body.style.overflowX = "auto";
     }
   }
+
+
 }

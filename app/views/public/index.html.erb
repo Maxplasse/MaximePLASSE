@@ -1,5 +1,5 @@
 <div>
-  <div class="bg-backgroundcolor rounded-b-[40px] mt-[-100px] pb-48">
+  <div class="bg-backgroundcolor rounded-b-[40px] mt-[-100px] pb-48 md:pb-0">
     <div class="h-[100vh] flex text-black flex-col justify-center items-center font-title md:mt-[30px]">
       <div data-controller="title" data-action="scroll@window->title#updateTitleSize">
         <h1>
@@ -25,7 +25,7 @@
         </div>
       </div>
     </div>
-    <section id="presentation-section" class="4xsm:mx-4 4xsm:mt-32 md:mt-0 md:flex my-20 bg-black md:mx-[3.6rem] rounded md:px-5">
+    <section id="presentation-section" class="4xsm:mx-4 md:flex my-20 bg-black md:mx-[3.6rem] rounded md:px-5">
       <div class="text-backgroundcolor 4xsm:mx-8 md:mx-16 md:flex">
         <div class="pl-4 mt-8 4xsm:ml-1 md:flex md:flex-col md:ml-8">
           <div class="4xsm:text-[20px] 4xsm:pt-12 4xsm:pb-6 2xsm:text-[21px] font-title tracking-tighter md:pb-0 md:text-[25px] md:pt-0 md:mb-8 md:mt-8">
@@ -58,7 +58,7 @@
     </section>
     <div class="text-black 4xsm:mt-16 4xsm:mx-8 md:mx-16 md:mt-32">
       <div class="4xsm:text-[20px] 4xsm:ml-4 2xsm:text-[21px] md:text-[25px] font-title tracking-tighter md:ml-24"><%= t('experience') %></div>
-      <div class="4xsm:mt-20 md:mt-40">
+      <div class="4xsm:mt-20 md:mt-80">
         <%= render 'shared/carousel' %>
       </div>
     </div>

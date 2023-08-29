@@ -1,5 +1,5 @@
 <nav data-controller="navbar" data-navbar-target="navbarContainer" data-action="scroll@window->navbar#updateNavbar scroll@window->navbar#handleNavbarVisibility" class="flex items-center justify-between flex-wrap md:mx-12 py-4 sticky top-0 z-50 absolute bg-backgroundcolor md:px-5">
-  <div class="4xsm:ml-6 2xsm:ml-4 md:ml-0 flex items-center flex-shrink-0 text-orange md:mr-6">
+  <div data-navbar-target="logo" class="4xsm:ml-6 2xsm:ml-4 md:ml-0 flex items-center flex-shrink-0 text-orange md:mr-6">
     <a href="#">
       <%= image_tag "logo_MP.png", class: "h-16 w-16" %>
     </a>
