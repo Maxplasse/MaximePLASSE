@@ -39,7 +39,7 @@
 
   .toolbox{
     display:flex;
-    width:62.5vw;
+    width:52.5vw;
     padding:1rem;
     margin: auto;
   }
@@ -78,20 +78,21 @@
   }
 </style>
 
-<canvas id="canvas" width="800" height="400" >
+<canvas id="canvas" width="650" height="350" >
 </canvas>
 <canvas id="canvas2" width="300" height="200" >
 </canvas>
 <div>
-  <div class="text-[36px] text-black absolute 4xsm:bottom-[250px] 4xsm:left-[40px] md:bottom-[550px] md:left-[300px] select-none">
+  <div class="text-[18px] text-black absolute 4xsm:bottom-[300px] 4xsm:left-[55px] md:md:text-[36px] md:bottom-[490px] md:left-[340px] select-none">
     <span class="font-thin"><%= t('firstname') %></span>
     <span class="font-black"><%= t('lastname') %></span>
   </div>
   <div>
-    <p class="text-black text-[20px] underline underline-offset-1 absolute 4xsm:bottom-[210px] 4xsm:left-[40px] md:bottom-[510px] md:left-[350px] select-none"><%= t('contact-me-title') %></p>
+    <p class="text-black text-[14px] absolute 4xsm:bottom-[240px] 4xsm:max-w-[250px] 4xsm:left-[55px] md:max-w-[650px] md:bottom-[440px] md:text-[20px] md:left-[340px] select-none"><%= t('contact-me-title') %></p>
   </div>
 </div>
-<p class="text-black absolute 4xsm:bottom-[180px] 4xsm:left-[40px] md:bottom-[450px] md:left-[350px] select-none">maxplasse.pro@gmail.com</p>
+<p class="text-black absolute 4xsm:bottom-[200px] 4xsm:left-[55px] md:bottom-[350px] md:left-[340px] select-none">Reach me at:</p>
+<p class="text-black absolute 4xsm:bottom-[180px] 4xsm:left-[55px] md:bottom-[330px] md:left-[340px] select-none underline underline-offset-1"><a href="mailto:maxplasse.pro@gmail.com">maxplasse.pro@gmail.com</a></p>
 <div class="toolbox">
     <button id="decrease">-</button>
     <span id="size">30</span>
