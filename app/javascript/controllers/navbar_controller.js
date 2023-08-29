@@ -40,13 +40,13 @@ export default class extends Controller {
 
     // Define an array of objects for different device widths and scroll positions
     const deviceConfig = [
-      { maxWidth: 375, scrollPosition: 380, smallHeightScrollPosition: 350 },
-      { maxWidth: 390, scrollPosition: 385, smallHeightScrollPosition: 350 },
-      { maxWidth: 414, scrollPosition: 530, smallHeightScrollPosition: 510 },
+      { maxWidth: 375, scrollPosition: 430, smallHeightScrollPosition: 400 },
+      { maxWidth: 390, scrollPosition: 430, smallHeightScrollPosition: 400 },
+      { maxWidth: 414, scrollPosition: 530, smallHeightScrollPosition: 500 },
       { maxWidth: 768, scrollPosition: 360, smallHeightScrollPosition: 330 },
       { maxWidth: 992, scrollPosition: 360, smallHeightScrollPosition: 330 },
-      { maxWidth: 1200, scrollPosition: 320, smallHeightScrollPosition: 315 },
-      { maxWidth: 2600, scrollPosition: 350, smallHeightScrollPosition: 350 },
+      { maxWidth: 1200, scrollPosition: 350, smallHeightScrollPosition: 320 },
+      { maxWidth: 2600, scrollPosition: 350, smallHeightScrollPosition: 320 },
       // Add more as needed
     ];
 

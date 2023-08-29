@@ -11,11 +11,11 @@ export default class extends Controller {
     let initialFontSize;
 
     if (windowWidth <= 375) {
-      initialFontSize = 2.7;
+      initialFontSize = 4;
     } else if (windowWidth <= 390) {
-      initialFontSize = 2.8;
+      initialFontSize = 4;
     } else if (windowWidth <= 414) {
-      initialFontSize = 3;
+      initialFontSize = 4;
     } else if (windowWidth <= 768) {
       initialFontSize = 4;
     } else if (windowWidth <= 992) {
@@ -34,9 +34,9 @@ export default class extends Controller {
     const windowWidth = window.innerWidth;
 
     const fontSizeRanges = [
-      { maxWidth: 375, minFontSize: 0.3, maxFontSize: 2.7 },
-      { maxWidth: 390, minFontSize: 0.3, maxFontSize: 2.8 },
-      { maxWidth: 414, minFontSize: 0, maxFontSize: 3 },
+      { maxWidth: 375, minFontSize: 0.3, maxFontSize: 4 },
+      { maxWidth: 390, minFontSize: 0.3, maxFontSize: 4 },
+      { maxWidth: 414, minFontSize: 0, maxFontSize: 4 },
       { maxWidth: 768, minFontSize: 0.3, maxFontSize: 4 },
       { maxWidth: 992, minFontSize: 0.3, maxFontSize: 5 },
       { maxWidth: 1200, minFontSize: 1.5, maxFontSize: 5 },
