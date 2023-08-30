@@ -440,7 +440,19 @@
           </div>
         </div>
       </div>
-      <div class="swiper-slide 4xsm:text-[14px] md:text-[18px]"><%= t('slide3-title') %></div>
+      <div class="swiper-slide 4xsm:text-[14px] md:text-[18px]">
+        <div class="flex flex-col">
+          <div>
+            <%= t('slide3-title.title') %>
+          </div>
+          <br>
+          <div class="mx-auto 4xsm:h-24 4xsm:w-24 md:h-44 md:w-44 md:pt-12"><%= image_tag ("KPMG.png") %></div>
+          <br>
+          <div class="4xsm:text-[12px] md:text-[14px] md:pb-4">
+            <%= t('slide3-title.position') %>
+          </div>
+        </div>
+      </div>
       <div class="swiper-slide 4xsm:text-[14px] md:text-[18px]"><%= t('slide4-title') %></div>
       <div class="swiper-slide 4xsm:text-[14px] md:text-[18px]"><%= t('slide5-title') %></div>
     </div>
@@ -508,6 +520,23 @@
               </li>
             </ul>`,
             `<div class="4xsm:block md:hidden">
+              <strong>Guided</strong> diverse valuation projects shaping decisions for acquisitions and refinancing,
+              <strong>developed</strong> financial models helping investment decisions and crafting business plans,
+              <strong>built</strong> strong client relationships through insightful analysis and effective communication
+            </div>
+            <ul class="4xsm:hidden md:block custom-list">
+              <li>
+                Guided diverse valuation projects shaping decisions for acquisitions, restructurings, and refinancing
+              </li>
+              <li>
+                Developed financial models helping investment decisions and crafting comprehensive business plans
+              </li>
+              <li>
+                Built strong client relationships through insightful analysis and effective communication
+              </li>
+            </ul>
+            <span class="block h-[1rem] md:mb-[-5.6rem]"></span>`,
+            `<div class="4xsm:block md:hidden">
               <strong>Developed</strong> strategic plans,
               <strong>designed</strong> and <strong>built</strong> the platform (Figma, Ruby On Rails, Javascript),
               <strong>analyzed</strong> metrics using GA and Hotjar,
@@ -515,29 +544,6 @@
               <strong>built</strong> a community of 40 chefs, engaged 1000+ users via social media and newsletters
             </div>
             <ul class="4xsm:hidden md:block custom-list">
-              <li>
-                Developed strategic plans
-              </li>
-              <li>
-                Designed and built the platform (Figma, Ruby On Rails, Javascript)
-              </li>
-              <li>
-                Analyzed metrics using GA and Hotjar
-              </li>
-              <li>
-                Addressed user needs with custom features
-              </li>
-              <li>
-                Built a community of 40 chefs, engaged 1000+ users via social media and newsletters
-              </li>
-            </ul>`,
-            `<div class="4xsm:block md:hidden">
-              <strong>Developed</strong> strategic plans,
-              <strong>designed</strong> and <strong>built</strong> the platform (Figma, Ruby On Rails, Javascript),
-              <strong>analyzed</strong> metrics using GA and Hotjar,
-              <strong>addressed</strong> user needs with custom features,
-              <strong>built</strong> a community of 40 chefs, engaged 1000+ users via social media and newsletters
-            </div><ul class="4xsm:hidden md:block custom-list">
               <li>
                 Developed strategic plans
               </li>
@@ -610,31 +616,31 @@
               </li>
             </ul>`,
             `<div class="4xsm:block md:hidden">
-              User-Centric Problem Solving,
-              Strategic Planning and Analysis,
-              Web Development and Design,
-              Community Building and Engagement,
-              Data Analytics and Insights,
-              Effective Communication and Marketing
+              DATA-DRIVEN INSIGHTS
+              FINANCIAL STRATEGY & MODELLING
+              CLIENT RELATIONSHIP MANAGEMENT
+              CROSS-FUNCTIONAL COLLABORATION
+              STRATEGIC DECISION-MAKING
+              Shaping strategies through impactful presentations
             </div>
             <ul class="4xsm:hidden md:block custom-list md:mr-[74px]">
               <li>
-                User-Centric Problem Solving
+                DATA-DRIVEN INSIGHTS
               </li>
               <li>
-                Strategic Planning and Analysis
+                FINANCIAL STRATEGY & MODELLING
               </li>
               <li>
-                Web Development and Design
+                CLIENT RELATIONSHIP MANAGEMENT
               </li>
               <li>
-                Community Building and Engagement
+                CROSS-FUNCTIONAL COLLABORATION
               </li>
               <li>
-                Data Analytics and Insights
+                STRATEGIC DECISION-MAKING
               </li>
               <li>
-                Effective Communication and Marketing
+                shaping strategies through impactful presentations
               </li>
             </ul>`,
             `<div class="4xsm:block md:hidden">
@@ -705,12 +711,18 @@
           var containerFcContainer = document.getElementById("container-fc");
 
           if (this.activeIndex === 1) {
-            additionalTextContainer.style.display = "flex";
-            containerFcContainer.style.display = "flex";
+            if (window.innerWidth > 450) {
+              additionalTextContainer.style.display = "flex";
+              containerFcContainer.style.display = "flex";
+            } else {
+              additionalTextContainer.style.display = "none";
+              containerFcContainer.style.display = "none";
+            }
           } else {
             additionalTextContainer.style.display = "none";
             containerFcContainer.style.display = "none";
           }
+
         },
       },
     });

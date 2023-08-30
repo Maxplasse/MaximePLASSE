@@ -14,7 +14,9 @@ en:
   slide2-title:
     title: "A 3 YEAR-ENTREPRENEURSHIP ADVENTURE"
     position: "FOUNDER, CPO & FULL STACK DEVELOPER AT FOODCLASS"
-  slide3-title: "A STRONG ANALYTICAL ROLE AT KPMG"
+  slide3-title:
+    title: "A STRONG ANALYTICAL ROLE AT KPMG"
+    position: "SENIOR ANALYST - BUSINESS MODELLING AND DATA ANALYSIS"
   slide4-title: ""
   slide5-title: ""
   about: "ABOUT"
