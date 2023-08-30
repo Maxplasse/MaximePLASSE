@@ -44,7 +44,7 @@
       display: flex;
       justify-content: space-around;
       position: relative;
-      bottom: 180px;
+      bottom: 215px;
     }
     @media (max-width: 440px) {
       .swiper {
@@ -180,20 +180,22 @@
     .additional-text-container {
       display: none;
       border-radius: 10rem;
-      background: #b0b1b2;
-      padding: 5px 10px;
-      margin: 0px 400px;
+      background: #aeafb1;
+      padding: 8px 10px;
+      width: 350px;
     }
+
 
     .link-container {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: 10px;
+      margin: 0 10px;
+      padding-left: 6px;
     }
 
     .link-container a {
-      color: #007bff;
+      color: #b0b1b2;
       text-decoration: none;
     }
 
@@ -204,15 +206,130 @@
       border-radius: 10rem;
       align-items: center;
       overflow: hidden;
-      width: 200px;
+      width: 260px;
       background: #d1d1d1;
       padding: 5px 10px;
     }
 
     .scrolling-text-link {
-      animation: scrollText 35s linear infinite;
-      animation-delay: -15s;
+      animation: scrollText 105s linear infinite;
+      animation-delay: -45s;
       white-space: nowrap;
+    }
+
+    #container-fc {
+      display: none;
+    }
+
+    #container-fc > .content-fc {
+      float: left;
+      height: 500px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      position: absolute;
+    }
+
+    /* Arrow */
+
+    .arrow-fc {
+      position: relative;
+      margin: 0 auto;
+      width: 100px;
+      left: 411px;
+      bottom: 42px;
+    }
+
+    .arrow-fc .curve-fc {
+      border: 2px solid #919191;
+      border-color: transparent transparent transparent #919191;
+      transform:rotate(37deg);
+      height: 97px;
+      width: 99px;
+      border-radius: 133px 0 0 223px;
+      opacity: 0;
+      animation: fadeInCurve 1s linear forwards;
+    }
+
+    .arrow-fc .point-fc {
+      position: absolute;
+      left: 8px;
+      top: 56px;
+      opacity: 0;
+      animation: fadeInPoints 1s linear forwards;
+    }
+
+    .arrow-fc .point-fc:before, .arrow-fc .point-fc:after {
+      border: 1.5px solid #212529;
+      border-radius: 3px;
+      height: 25px;
+      content: "";
+      position: absolute;
+      opacity: 0;
+    }
+
+    .arrow-fc .point-fc:before {
+      top: -11px;
+      left: -10px;
+      transform:rotate(-74deg);
+      opacity: 0;
+      animation: fadeInBeforePoint 1s linear forwards;
+    }
+
+    .custom-list {
+      list-style-type: none;
+    }
+
+    .custom-list li::before {
+      content: "\2022";
+      color: #f74c20;
+      font-size: 14px;
+      margin-right: 10px;
+    }
+
+
+    @keyframes fadeInBeforePoint {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .arrow-fc .point-fc:after {
+      top: -20px;
+      left: 5px;
+      transform:rotate(12deg);
+      opacity: 0;
+      animation: fadeInAfterPoint 1s linear forwards;
+    }
+
+    @keyframes fadeInAfterPoint {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInPoints {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInCurve {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
     }
 
     @keyframes scrollText {
@@ -251,7 +368,14 @@
       }
     }
 
-
+    @media (max-width: 440px) {
+      .additional-text-container {
+        display: none;
+      }
+      .scrolling-text-container {
+        padding: 0px 10px;
+      }
+    }
 
   </style>
 </head>
@@ -259,21 +383,29 @@
 <body>
   <!-- Swiper -->
   <div class="active-card-text">
-    <div class="container active-card-text-left md:ml-24 max-w-[300px] min-x-[299px] text-center">
+    <div class="container active-card-text-left md:ml-[5rem] max-w-[370px] min-x-[299px] text-left">
       <span class="highlight-container font-title uppercase md:text-[20px] md:text-bold"><span class="highlight">Achievements:</span></span><br>
-      <span class="uppercase text-[12px] mt-4" id="activeCardTextLeft">Discover the accomplishments I've attained over my 6-year career and the progression that has steered me into Product Management</span>
+      <span class="uppercase text-[12px] mt-4" id="activeCardTextLeft">Discover the accomplishments I've attained over my 6-year career and the progression that has steered me into Product Management<span class="block h-[4rem] md:h-[8rem]"></span></span>
     </div>
-    <div class="active-card-text-right md:mr-24 max-w-[300px] min-x-[299px] text-center">
+    <div class="active-card-text-right max-w-[370px] min-x-[299px] text-left">
       <span class="highlight-container2 font-title uppercase md:text-[20px] md:text-bold"><span class="highlight2 text-backgroundcolor">Skills:</span></span><br>
-      <span class="uppercase text-[12px] mt-4" id="activeCardTextRight" >Analytical skills, strong communication, problem-solving abilities... I'm well-positioned for success as a Product Manager</span>
+      <span class="uppercase text-[12px] mt-4" id="activeCardTextRight" >Analytical skills, strong communication, problem-solving abilities... I'm well-positioned for success as a Product Manager<span class="block h-[4rem] md:h-[8rem]"></span></span>
+    </div>
+  </div>
+  <div id="container-fc">
+    <div class="content-fc">
+      <div class="arrow-fc">
+        <div class="curve-fc"></div>
+        <div class="point-fc"></div>
+      </div>
     </div>
   </div>
 
   <div class="active-card-text-mobile">
     <div class="mb-8">
       <span class="highlight-container font-title uppercase font-bold"><span class="highlight">Achievements:</span></span><br>
-      <div class="min-h-[80px] uppercase text-[12px] mt-4">
-        <span id="activeCardTextLeftMobile">Discover the accomplishments I've attained over my 6-year career and the progression that has steered me into Product Management</span>
+      <div class="min-h-[70px] text-[10px] my-4">
+        <span id="activeCardTextLeftMobile">Discover the accomplishments I've attained over my 6-year career and the progression that has steered me into Product Management <p class="text-backgroundcolor">addressed user needs with custom features, built a community of 40 chefs, engaged 1000+ users via social media and newsletters</p></span>
       </div>
     </div>
   </div>
@@ -316,16 +448,26 @@
   <div class="active-card-text-mobile">
     <div class="active-card-text-right mt-8">
       <span class="highlight-container2 font-title uppercase font-bold"><span class="highlight2 text-backgroundcolor">Skills:</span></span><br>
-      <div class="min-h-[80px] uppercase text-[12px] mt-4">
-        <span id="activeCardTextRightMobile" >Analytical skills, strong communication, problem-solving abilities... I'm well-positioned for success as a Product Manager</span>
+      <div class="min-h-[70px] text-[10px] my-4">
+        <span id="activeCardTextRightMobile" >Analytical skills, strong communication, problem-solving abilities... I'm well-positioned for success as a Product Manager <p class="text-backgroundcolor">addressed user needs with custom features, built a community of 40 chefs, engaged 1000+ users via social media and newsletters</p></span>
       </div>
     </div>
   </div>
-  <div class="justify-center additional-text-container font-title md:text-[12px] relative bottom-60 mx-auto md:text-bold" id="additionalTextContainer">
+  <div class="justify-center additional-text-container font-title md:text-[12px] relative 4xsm:bottom-[45rem] md:bottom-[18rem] mx-auto md:text-bold" id="additionalTextContainer">
     <div class="scrolling-text-container">
-      <p class="scrolling-text-link"><span class="px-4">https://www.foodclass.fr</span> <span class="px-4">https://www.foodclass.fr</span> <span>https://www.foodclass.fr</span></p>
+      <p class="scrolling-text-link"><span class="px-4">https://www.foodclass.fr</span>
+      <span class="px-4">https://www.foodclass.fr</span>
+      <span class="px-4">https://www.foodclass.fr</span>
+      <span class="px-4">https://www.foodclass.fr</span>
+      <span class="px-4">https://www.foodclass.fr</span>
+      <span class="px-4">https://www.foodclass.fr</span>
+      <span class="px-4">https://www.foodclass.fr</span>
+      <span class="px-4">https://www.foodclass.fr</span>
+      <span class="px-4">https://www.foodclass.fr</span>
+      <span class="px-4">https://www.foodclass.fr</span>
+      <span>https://www.foodclass.fr</span></p>
     </div>
-    <a href="https://www.foodclass.fr" target="_blank" class="link-container uppercase">visit</a>
+    <a href="https://www.foodclass.fr" target="_blank" class="link-container uppercase font-black text-title">visit</a>
   </div>
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
@@ -339,32 +481,235 @@
         slideChange: function () {
           // Array of text for each slide
           var slideTextsLeft = [
-            "Discover the accomplishments I've attained over my 6-year career and the progression that has steered me into Product Management",
-            "Discover the accomplishments I've attained over my 6-year career and the progression that has steered me into Product Manager",
-            "Discover the accomplishments I've attained over my 6-year career and the progression that has steered me into Product Management",
-            "Discover the accomplishments I've attained over my 6-year career and the progression that has steered me into Product Manager",
-            "Discover the accomplishments I've attained over my 6-year career and the progression that has steered me into Product Management",
+            `Discover the accomplishments I've attained over my 6-year career and the progression that has steered me into Product Management
+            <span class="block h-[4rem] md:h-[8rem]"></span>`,
+            `<div class="4xsm:block md:hidden">
+              <strong>Developed</strong> strategic plans,
+              <strong>designed</strong> and <strong>built</strong> the platform (Figma, Ruby On Rails, Javascript),
+              <strong>analyzed</strong> metrics using GA and Hotjar,
+              <strong>addressed</strong> user needs with custom features,
+              <strong>built</strong> a community of 40 chefs, engaged 1000+ users via social media and newsletters
+            </div>
+            <ul class="4xsm:hidden md:block custom-list">
+              <li>
+                Developed strategic plans
+              </li>
+              <li>
+                Designed and built the platform (Figma, Ruby On Rails, Javascript)
+              </li>
+              <li>
+                Analyzed metrics using GA and Hotjar
+              </li>
+              <li>
+                Addressed user needs with custom features
+              </li>
+              <li>
+                Built a community of 40 chefs, engaged 1000+ users via social media and newsletters
+              </li>
+            </ul>`,
+            `<div class="4xsm:block md:hidden">
+              <strong>Developed</strong> strategic plans,
+              <strong>designed</strong> and <strong>built</strong> the platform (Figma, Ruby On Rails, Javascript),
+              <strong>analyzed</strong> metrics using GA and Hotjar,
+              <strong>addressed</strong> user needs with custom features,
+              <strong>built</strong> a community of 40 chefs, engaged 1000+ users via social media and newsletters
+            </div>
+            <ul class="4xsm:hidden md:block custom-list">
+              <li>
+                Developed strategic plans
+              </li>
+              <li>
+                Designed and built the platform (Figma, Ruby On Rails, Javascript)
+              </li>
+              <li>
+                Analyzed metrics using GA and Hotjar
+              </li>
+              <li>
+                Addressed user needs with custom features
+              </li>
+              <li>
+                Built a community of 40 chefs, engaged 1000+ users via social media and newsletters
+              </li>
+            </ul>`,
+            `<div class="4xsm:block md:hidden">
+              <strong>Developed</strong> strategic plans,
+              <strong>designed</strong> and <strong>built</strong> the platform (Figma, Ruby On Rails, Javascript),
+              <strong>analyzed</strong> metrics using GA and Hotjar,
+              <strong>addressed</strong> user needs with custom features,
+              <strong>built</strong> a community of 40 chefs, engaged 1000+ users via social media and newsletters
+            </div><ul class="4xsm:hidden md:block custom-list">
+              <li>
+                Developed strategic plans
+              </li>
+              <li>
+                Designed and built the platform (Figma, Ruby On Rails, Javascript)
+              </li>
+              <li>
+                Analyzed metrics using GA and Hotjar
+              </li>
+              <li>
+                Addressed user needs with custom features
+              </li>
+              <li>
+                Built a community of 40 chefs, engaged 1000+ users via social media and newsletters
+              </li>
+            </ul>`,
+            `<div class="4xsm:block md:hidden">
+              <strong>Developed</strong> strategic plans,
+              <strong>designed</strong> and <strong>built</strong> the platform (Figma, Ruby On Rails, Javascript),
+              <strong>analyzed</strong> metrics using GA and Hotjar,
+              <strong>addressed</strong> user needs with custom features,
+              <strong>built</strong> a community of 40 chefs, engaged 1000+ users via social media and newsletters
+            </div>
+            <ul class="4xsm:hidden md:block custom-list">
+              <li>
+                Developed strategic plans
+              </li>
+              <li>
+                Designed and built the platform (Figma, Ruby On Rails, Javascript)
+              </li>
+              <li>
+                Analyzed metrics using GA and Hotjar
+              </li>
+              <li>
+                Addressed user needs with custom features
+              </li>
+              <li>
+                Built a community of 40 chefs, engaged 1000+ users via social media and newsletters
+              </li>
+            </ul>`,
           ];
           var slideTextsRight = [
             "Analytical skills, strong communication, problem-solving abilities... I'm well-positioned for success as a Product Manager",
-            "Analytical skills, strong communication, problem-solving abilities... I'm well-positioned for success as a Product Management",
-            "Analytical skills, strong communication, problem-solving abilities... I'm well-positioned for success as a Product Manager",
-            "Analytical skills, strong communication, problem-solving abilities... I'm well-positioned for success as a Product Management",
-            "Analytical skills, strong communication, problem-solving abilities... I'm well-positioned for success as a Product Manager",
+            `<div class="4xsm:block md:hidden">
+              User-Centric Problem Solving,
+              Strategic Planning and Analysis,
+              Web Development and Design,
+              Community Building and Engagement,
+              Data Analytics and Insights,
+              Effective Communication and Marketing
+            </div>
+            <ul class="4xsm:hidden md:block custom-list md:mr-[74px]">
+              <li>
+                User-Centric Problem Solving
+              </li>
+              <li>
+                Strategic Planning and Analysis
+              </li>
+              <li>
+                Web Development and Design
+              </li>
+              <li>
+                Community Building and Engagement
+              </li>
+              <li>
+                Data Analytics and Insights
+              </li>
+              <li>
+                Effective Communication and Marketing
+              </li>
+            </ul>`,
+            `<div class="4xsm:block md:hidden">
+              User-Centric Problem Solving,
+              Strategic Planning and Analysis,
+              Web Development and Design,
+              Community Building and Engagement,
+              Data Analytics and Insights,
+              Effective Communication and Marketing
+            </div>
+            <ul class="4xsm:hidden md:block custom-list md:mr-[74px]">
+              <li>
+                User-Centric Problem Solving
+              </li>
+              <li>
+                Strategic Planning and Analysis
+              </li>
+              <li>
+                Web Development and Design
+              </li>
+              <li>
+                Community Building and Engagement
+              </li>
+              <li>
+                Data Analytics and Insights
+              </li>
+              <li>
+                Effective Communication and Marketing
+              </li>
+            </ul>`,
+            `<div class="4xsm:block md:hidden">
+              User-Centric Problem Solving,
+              Strategic Planning and Analysis,
+              Web Development and Design,
+              Community Building and Engagement,
+              Data Analytics and Insights,
+              Effective Communication and Marketing
+            </div>
+            <ul class="4xsm:hidden md:block custom-list md:mr-[74px]">
+              <li>
+                User-Centric Problem Solving
+              </li>
+              <li>
+                Strategic Planning and Analysis
+              </li>
+              <li>
+                Web Development and Design
+              </li>
+              <li>
+                Community Building and Engagement
+              </li>
+              <li>
+                Data Analytics and Insights
+              </li>
+              <li>
+                Effective Communication and Marketing
+              </li>
+            </ul>`,
+            `<div class="4xsm:block md:hidden">
+              User-Centric Problem Solving,
+              Strategic Planning and Analysis,
+              Web Development and Design,
+              Community Building and Engagement,
+              Data Analytics and Insights,
+              Effective Communication and Marketing
+            </div>
+            <ul class="4xsm:hidden md:block custom-list md:mr-[74px]">
+              <li>
+                User-Centric Problem Solving
+              </li>
+              <li>
+                Strategic Planning and Analysis
+              </li>
+              <li>
+                Web Development and Design
+              </li>
+              <li>
+                Community Building and Engagement
+              </li>
+              <li>
+                Data Analytics and Insights
+              </li>
+              <li>
+                Effective Communication and Marketing
+              </li>
+            </ul>`,
           ];
 
           // Update the additional text section with the active slide text
-          document.getElementById("activeCardTextLeft").innerText = slideTextsLeft[this.activeIndex];
-          document.getElementById("activeCardTextRight").innerText = slideTextsRight[this.activeIndex];
-          document.getElementById("activeCardTextLeftMobile").innerText = slideTextsLeft[this.activeIndex];
-          document.getElementById("activeCardTextRightMobile").innerText = slideTextsRight[this.activeIndex];
+          document.getElementById("activeCardTextLeft").innerHTML = slideTextsLeft[this.activeIndex];
+          document.getElementById("activeCardTextRight").innerHTML = slideTextsRight[this.activeIndex];
+          document.getElementById("activeCardTextLeftMobile").innerHTML = slideTextsLeft[this.activeIndex];
+          document.getElementById("activeCardTextRightMobile").innerHTML = slideTextsRight[this.activeIndex];
 
           var additionalTextContainer = document.getElementById("additionalTextContainer");
+          var containerFcContainer = document.getElementById("container-fc");
 
           if (this.activeIndex === 1) {
             additionalTextContainer.style.display = "flex";
+            containerFcContainer.style.display = "flex";
           } else {
             additionalTextContainer.style.display = "none";
+            containerFcContainer.style.display = "none";
           }
         },
       },
