@@ -38,6 +38,7 @@ export default class extends Controller {
   updateNavbar() {
     const scrollAmount = window.scrollY;
     const windowHeight = window.innerHeight;
+    const windowWidth = window.innerWidth;
 
 
     const deviceConfig = [
@@ -57,7 +58,11 @@ export default class extends Controller {
     let scrollPositionThreshold = currentConfig.scrollPosition;
 
     if (windowHeight <= 620) {
-      scrollPositionThreshold = currentConfig.smallestHeightScrollPosition;
+      if (windowWidth >= 600) {
+        scrollPositionThreshold = currentConfig.smallHeightScrollPosition;
+      } else {
+        scrollPositionThreshold = currentConfig.smallestHeightScrollPosition;
+      }
     } else if (windowHeight <= 640) {
       scrollPositionThreshold = currentConfig.smallHeightScrollPosition;
     }
