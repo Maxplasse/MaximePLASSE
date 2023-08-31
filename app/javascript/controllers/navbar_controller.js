@@ -41,8 +41,8 @@ export default class extends Controller {
 
 
     const deviceConfig = [
-      { maxWidth: 375, scrollPosition: 465, smallHeightScrollPosition: 420 },
-      { maxWidth: 390, scrollPosition: 465, smallHeightScrollPosition: 420 },
+      { maxWidth: 375, scrollPosition: 515, smallHeightScrollPosition: 420 },
+      { maxWidth: 390, scrollPosition: 515, smallHeightScrollPosition: 420 },
       { maxWidth: 414, scrollPosition: 560, smallHeightScrollPosition: 500 },
       { maxWidth: 768, scrollPosition: 360, smallHeightScrollPosition: 330 },
       { maxWidth: 992, scrollPosition: 360, smallHeightScrollPosition: 330 },
