@@ -118,6 +118,9 @@ export default class extends Controller {
         const logoTranslate = -(scrollAmount - startScrollLogo) * moveFactor;
         const languageTranslate = (scrollAmount - startScrollLanguage) * moveFactor;
         logoElement.style.transform = `translateX(${logoTranslate}px)`;
+
+        // Apply position and translate to the language element
+        languageElement.style.position = "absolute"; // or "fixed"
         languageElement.style.transform = `translateX(${languageTranslate}px)`;
 
         if (languageTranslate > 0) {
@@ -126,13 +129,17 @@ export default class extends Controller {
           document.body.style.overflowX = "auto";
         }
       }
-      } else {
-        textElement.style.opacity = 1;
-        logoElement.style.transform = "translateX(0)";
-        languageElement.style.transform = "translateX(0)";
-        languageElement.style.position = "static";
-        document.body.style.overflowX = "auto";
-      }
+    } else {
+      textElement.style.opacity = 1;
+      logoElement.style.transform = "translateX(0)";
+
+      // Reset position and translation of the language element
+      languageElement.style.position = "static";
+      languageElement.style.transform = "translateX(0)";
+
+      document.body.style.overflowX = "auto";
+    }
+
   }
 
 
