@@ -41,8 +41,8 @@ export default class extends Controller {
 
 
     const deviceConfig = [
-      { maxWidth: 375, scrollPosition: 435, smallHeightScrollPosition: 400 },
-      { maxWidth: 390, scrollPosition: 435, smallHeightScrollPosition: 400 },
+      { maxWidth: 375, scrollPosition: 435, smallHeightScrollPosition: 420 },
+      { maxWidth: 390, scrollPosition: 435, smallHeightScrollPosition: 420 },
       { maxWidth: 414, scrollPosition: 530, smallHeightScrollPosition: 500 },
       { maxWidth: 768, scrollPosition: 360, smallHeightScrollPosition: 330 },
       { maxWidth: 992, scrollPosition: 360, smallHeightScrollPosition: 330 },
@@ -56,7 +56,7 @@ export default class extends Controller {
 
     let scrollPositionThreshold = currentConfig.scrollPosition;
 
-    if (windowHeight <= 600) {
+    if (windowHeight <= 640) {
       scrollPositionThreshold = currentConfig.smallHeightScrollPosition;
     }
 
