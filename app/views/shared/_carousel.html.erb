@@ -45,6 +45,7 @@
       justify-content: space-around;
       position: relative;
       bottom: 215px;
+      padding: 0 10px;
     }
     @media (max-width: 440px) {
       .swiper {
@@ -418,7 +419,7 @@
               <%= t('slide1-title') %>
             </span>
           </div>
-          <div class="arrow-container pt-36 pl-16">
+          <div class="arrow-container 4xsm:pt-[7rem] 4xsm:pl-[2rem] md:pt-36 md:pl-16">
             <svg class="arrow-svg" width="120" height="60" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
               <path class="arrow-path" d="M10 30 Q40 25, 100 30" />
               <line class="arrow-line-upper" x1="100" y1="20" x2="115" y2="30" />
@@ -427,34 +428,50 @@
           </div>
         </div>
       </div>
-      <div class="swiper-slide 4xsm:text-[14px] md:text-[18px]">
-        <div class="flex flex-col">
+      <div class="swiper-slide 4xsm:text-[12px] md:text-[15px]">
+        <div class="flex flex-col justify-between">
           <div>
             <%= t('slide2-title.title') %>
           </div>
-          <br>
-          <div class="mx-auto 4xsm:h-24 4xsm:w-24 md:h-28 md:w-28"><%= image_tag ("Logo-fc.png") %></div>
-          <br>
+          <div class="mx-auto 4xsm:h-24 4xsm:w-24 md:h-[9rem] md:w-28"><%= image_tag ("Logo-fc.png") %></div>
           <div class="4xsm:text-[12px] md:text-[14px]">
             <%= t('slide2-title.position') %>
           </div>
         </div>
       </div>
-      <div class="swiper-slide 4xsm:text-[14px] md:text-[18px]">
-        <div class="flex flex-col">
-          <div>
+      <div class="swiper-slide 4xsm:text-[12px] md:text-[15px]">
+        <div class="flex flex-col justify-between">
+          <div class="px-4">
             <%= t('slide3-title.title') %>
           </div>
-          <br>
-          <div class="mx-auto 4xsm:h-24 4xsm:w-24 md:h-44 md:w-44 md:pt-12"><%= image_tag ("KPMG.png") %></div>
-          <br>
+          <div class="mx-auto 4xsm:h-[5rem] 4xsm:w-[12rem] md:h-44 md:w-44 md:pt-12"><%= image_tag ("KPMG.png") %></div>
           <div class="4xsm:text-[12px] md:text-[14px] md:pb-4">
             <%= t('slide3-title.position') %>
           </div>
         </div>
       </div>
-      <div class="swiper-slide 4xsm:text-[14px] md:text-[18px]"><%= t('slide4-title') %></div>
-      <div class="swiper-slide 4xsm:text-[14px] md:text-[18px]"><%= t('slide5-title') %></div>
+      <div class="swiper-slide 4xsm:text-[12px] md:text-[15px]">
+        <div class="uppercase flex flex-col  justify-between">
+          <div>
+            <%= t('slide4-title.title') %>
+          </div>
+          <div class="mx-auto 4xsm:h-[3rem] 4xsm:w-[12rem]  md:h-[9rem] md:w-64 md:pt-12"><%= image_tag ("BNP.png") %></div>
+          <div class="4xsm:text-[12px] md:text-[14px] md:pb-4">
+            <%= t('slide4-title.position') %>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide 4xsm:text-[12px] md:text-[15px]">
+        <div class="uppercase flex flex-col justify-between">
+          <div>
+            <%= t('slide5-title.title') %>
+          </div>
+          <hr>
+          <div class="4xsm:text-[12px] md:text-[14px] md:pb-4">
+            <%= t('slide5-title.position') %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="active-card-text-mobile">
@@ -537,53 +554,43 @@
             </ul>
             <span class="block h-[1rem] md:mb-[-5.6rem]"></span>`,
             `<div class="4xsm:block md:hidden">
-              <strong>Developed</strong> strategic plans,
-              <strong>designed</strong> and <strong>built</strong> the platform (Figma, Ruby On Rails, Javascript),
-              <strong>analyzed</strong> metrics using GA and Hotjar,
-              <strong>addressed</strong> user needs with custom features,
-              <strong>built</strong> a community of 40 chefs, engaged 1000+ users via social media and newsletters
+             <strong>Strengthened </strong> collective success through active cross-team work,
+             <strong>explained </strong> balance sheet variations and impacts succinctly,
+             <strong>produced </strong> monthly reports (LCR, NSFR) for compliance and risk management,
+             <strong>analyzed </strong> Global Markets liquidity ratios.
             </div>
             <ul class="4xsm:hidden md:block custom-list">
               <li>
-                Developed strategic plans
+                Strengthened collective success through active cross-team work
               </li>
               <li>
-                Designed and built the platform (Figma, Ruby On Rails, Javascript)
+                Explained balance sheet variations and impacts succinctly
               </li>
               <li>
-                Analyzed metrics using GA and Hotjar
+                Produced crucial monthly reports (LCR, NSFR) for compliance and risk management
               </li>
               <li>
-                Addressed user needs with custom features
+                Analyzed Global Markets liquidity ratios collaborating with Front Office teams
               </li>
-              <li>
-                Built a community of 40 chefs, engaged 1000+ users via social media and newsletters
-              </li>
-            </ul>`,
+            </ul>
+            <span class="block md:mb-[-1.2rem]"></span>`,
             `<div class="4xsm:block md:hidden">
-              <strong>Developed</strong> strategic plans,
-              <strong>designed</strong> and <strong>built</strong> the platform (Figma, Ruby On Rails, Javascript),
-              <strong>analyzed</strong> metrics using GA and Hotjar,
-              <strong>addressed</strong> user needs with custom features,
-              <strong>built</strong> a community of 40 chefs, engaged 1000+ users via social media and newsletters
+              <strong>Dual-Degree Mastery:</strong> Master in Management (Project Management, Marketing, Corporate Strategy, etc.),
+              <br>
+              <strong>Bootcamp in Web Development:</strong> learned coding languages & created dynamic web applications.
             </div>
             <ul class="4xsm:hidden md:block custom-list">
               <li>
-                Developed strategic plans
+                Dual-Degree Mastery: Master in Management (Project Management, Marketing, Corporate Strategy, etc.), Msc in Corporate Finance
               </li>
               <li>
-                Designed and built the platform (Figma, Ruby On Rails, Javascript)
+                Web Development Proficiency: Web development bootcamp, achieving proficiency in coding languages creating dynamic web applications
               </li>
               <li>
-                Analyzed metrics using GA and Hotjar
+                Self-Educated in Growth Marketing, Product Management, and Product Design
               </li>
-              <li>
-                Addressed user needs with custom features
-              </li>
-              <li>
-                Built a community of 40 chefs, engaged 1000+ users via social media and newsletters
-              </li>
-            </ul>`,
+            </ul>
+            <span class="block md:mb-[-1rem]"></span>`,
           ];
           var slideTextsRight = [
             "Analytical skills, strong communication, problem-solving abilities... I'm well-positioned for success as a Product Manager",
@@ -616,11 +623,11 @@
               </li>
             </ul>`,
             `<div class="4xsm:block md:hidden">
-              DATA-DRIVEN INSIGHTS
-              FINANCIAL STRATEGY & MODELLING
-              CLIENT RELATIONSHIP MANAGEMENT
-              CROSS-FUNCTIONAL COLLABORATION
-              STRATEGIC DECISION-MAKING
+              Data-driven insights
+              Financial strategy and modelling
+              Client relationship management
+              Cross functionnal collaboration
+              Strategic decision-making
               Shaping strategies through impactful presentations
             </div>
             <ul class="4xsm:hidden md:block custom-list md:mr-[74px]">
@@ -640,63 +647,55 @@
                 STRATEGIC DECISION-MAKING
               </li>
               <li>
-                shaping strategies through impactful presentations
+                SHAPING STRATEGIES THROUGH IMPACTFUL PRESENTATIONS
               </li>
             </ul>`,
             `<div class="4xsm:block md:hidden">
-              User-Centric Problem Solving,
-              Strategic Planning and Analysis,
-              Web Development and Design,
-              Community Building and Engagement,
-              Data Analytics and Insights,
-              Effective Communication and Marketing
+              Financial Analysis and Liquidity Management,
+              Cross-Team Collaboration and Communication,
+              Regulatory Reporting,
+              Technical-Financial Bridging,
+              Balance Sheet Analysis
             </div>
             <ul class="4xsm:hidden md:block custom-list md:mr-[74px]">
               <li>
-                User-Centric Problem Solving
+                Financial Analysis and Liquidity Management
               </li>
               <li>
-                Strategic Planning and Analysis
+                Cross-Team Collaboration and Communication
               </li>
               <li>
-                Web Development and Design
+                Regulatory Reporting
               </li>
               <li>
-                Community Building and Engagement
+                Technical-Financial Bridging
               </li>
               <li>
-                Data Analytics and Insights
-              </li>
-              <li>
-                Effective Communication and Marketing
+                Balance Sheet Analysis
               </li>
             </ul>`,
             `<div class="4xsm:block md:hidden">
-              User-Centric Problem Solving,
-              Strategic Planning and Analysis,
-              Web Development and Design,
-              Community Building and Engagement,
-              Data Analytics and Insights,
-              Effective Communication and Marketing
+              Marketing, Communication, Corporate Strategy,
+              Financial Analysis and Strategic Management,
+              Project Management & Adaptability,
+              Web Development & Product Design,
+              Problem Solving
             </div>
             <ul class="4xsm:hidden md:block custom-list md:mr-[74px]">
               <li>
-                User-Centric Problem Solving
+                Marketing, Communication, Corporate Strategy
               </li>
               <li>
-                Strategic Planning and Analysis
+                Financial Analysis and Strategic Management
               </li>
               <li>
-                Web Development and Design
+                Project Management & Adaptability
               </li>
               <li>
-                Community Building and Engagement
+                Web Development & Product Design
               </li>
               <li>
-                Data Analytics and Insights
-              </li>
-              <li>
-                Effective Communication and Marketing
+                Problem Solving
               </li>
             </ul>`,
           ];

@@ -107,7 +107,6 @@
  const desktopCanvas = document.getElementById("canvas");
   const mobileCanvas = document.getElementById("canvas2");
 
-  // Use the appropriate canvas based on the screen size
   const canvas = window.innerWidth > 440 ? desktopCanvas : mobileCanvas;
   const ctx = canvas.getContext("2d");
 
@@ -189,10 +188,10 @@
     }
   });
 
-  // Disable both vertical and horizontal scrolling on the canvas element
+
   canvas.addEventListener("touchmove", (e) => {
     if (isPressed) {
-      e.preventDefault(); // Prevent default touch event behavior while drawing
+      e.preventDefault();
       const touch = e.touches[0];
       const x2 = touch.clientX - canvas.getBoundingClientRect().left;
       const y2 = touch.clientY - canvas.getBoundingClientRect().top;
