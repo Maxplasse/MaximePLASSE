@@ -117,11 +117,11 @@ export default class extends Controller {
       if (windowWidth <= 414) {
         const logoTranslate = -(scrollAmount - startScrollLogo) * moveFactor;
         const languageTranslate = (scrollAmount - startScrollLanguage) * moveFactor;
-        logoElement.style.transform = `translateX(${logoTranslate}px)`;
 
-        // Apply position and translate to the language element
-        languageElement.style.position = "absolute"; // or "fixed"
+        // Apply transform and position to the language element
+        logoElement.style.transform = `translateX(${logoTranslate}px)`;
         languageElement.style.transform = `translateX(${languageTranslate}px)`;
+        languageElement.style.position = "absolute"; // or "fixed"
 
         if (languageTranslate > 0) {
           document.body.style.overflowX = "hidden";
@@ -133,12 +133,13 @@ export default class extends Controller {
       textElement.style.opacity = 1;
       logoElement.style.transform = "translateX(0)";
 
-      // Reset position and translation of the language element
-      languageElement.style.position = "static";
+      // Reset transform and position of the language element
       languageElement.style.transform = "translateX(0)";
+      languageElement.style.position = "static";
 
       document.body.style.overflowX = "auto";
     }
+
 
   }
 
