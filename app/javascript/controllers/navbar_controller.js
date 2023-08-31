@@ -86,7 +86,6 @@ export default class extends Controller {
     const logoElement = this.logoTarget;
     const languageElement = this.languageTarget;
 
-
     const startScroll = 250;
     const startScrollLogo = 250;
     const startScrollLanguage = 250;
@@ -119,9 +118,14 @@ export default class extends Controller {
         const languageTranslate = (scrollAmount - startScrollLanguage) * moveFactor;
 
         // Apply transform and position to the language element
+        // logoElement.style.transform = `translateX(${logoTranslate}px)`;
+        // languageElement.style.transform = `translateX(${languageTranslate}px)`;
+        // languageElement.style.position = "absolute"; // or "fixed"
+
         logoElement.style.transform = `translateX(${logoTranslate}px)`;
-        languageElement.style.transform = `translateX(${languageTranslate}px)`;
-        languageElement.style.position = "absolute"; // or "fixed"
+
+        languageElement.style.position = "fixed";
+        languageElement.style.left = `${languageTranslate}px`;
 
         if (languageTranslate > 0) {
           document.body.style.overflowX = "hidden";
@@ -133,9 +137,9 @@ export default class extends Controller {
       textElement.style.opacity = 1;
       logoElement.style.transform = "translateX(0)";
 
-      // Reset transform and position of the language element
-      languageElement.style.transform = "translateX(0)";
+      // Reset styles of the language element
       languageElement.style.position = "static";
+      languageElement.style.left = "0";
 
       document.body.style.overflowX = "auto";
     }
