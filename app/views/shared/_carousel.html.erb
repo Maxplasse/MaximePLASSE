@@ -39,13 +39,28 @@
     }
 
     .swiper {
-      width: 240px;
-      height: 320px;
+      width: 320px;
+      height: 420px;
       display: flex;
       justify-content: space-around;
       position: relative;
-      bottom: 215px;
-      padding: 0 10px;
+      bottom: 0px;
+    }
+
+    @media (max-width: 1600px) {
+      .swiper {
+        width: 280px;
+        height: 380px;
+        bottom: 330px;
+      }
+    }
+
+    @media (max-width: 1350px) {
+      .swiper {
+        width: 240px;
+        height: 320px;
+        bottom: 215px;
+      }
     }
     @media (max-width: 440px) {
       .swiper {
@@ -70,11 +85,36 @@
       justify-content: space-between;
       transform: translateY(-50%);
       padding: 10px;
+      position: absolute;
+    }
+
+    .active-card-left {
+      position: relative;
+      top: 250px;
+    }
+
+    .active-card-right {
+      position: relative;
+      top: 250px;
+      left: 660px;
     }
 
     .active-card-text-mobile {
       display: none;
     }
+
+    @media (max-width: 1600px) {
+      .active-card-text {
+        position: inherit;
+      }
+    }
+
+    @media (max-width: 1350px) {
+      .active-card-text {
+        position: inherit;
+      }
+    }
+
 
     @media (max-width: 920px) {
       .active-card-text {
@@ -237,8 +277,8 @@
       position: relative;
       margin: 0 auto;
       width: 100px;
-      left: 411px;
-      bottom: 42px;
+      left: 650px;
+      top: 404px
     }
 
     .arrow-fc .curve-fc {
@@ -378,19 +418,33 @@
       }
     }
 
+    @media (max-width: 1600px) {
+      .arrow-fc {
+        left: 421px;
+        top: -77px
+      }
+    }
+    @media (max-width: 1350px) {
+      .arrow-fc {
+        left: 411px;
+        bottom: 42px;
+      }
+    }
+
+
   </style>
 </head>
 
 <body>
   <!-- Swiper -->
   <div class="active-card-text">
-    <div class="container active-card-text-left md:ml-[5rem] max-w-[370px] min-x-[299px] text-left">
-      <span class="highlight-container font-title uppercase md:text-[20px] md:text-bold"><span class="highlight">Achievements:</span></span><br>
-      <span class="uppercase text-[12px] mt-4" id="activeCardTextLeft">Discover the accomplishments I've attained over my 6-year career and the progression that has steered me into Product Management<span class="block h-[4rem] md:h-[8rem]"></span></span>
+    <div class="container active-card-text-left text-left md:ml-[5rem] md:max-w-[370px] md:min-x-[299px] 2xl:max-w-[400px] 3xl:ml-[10rem] 3xl:relative 3xl:top-[180px] 3xl:left-[60px]">
+      <span class="highlight-container font-title uppercase md:text-[20px] md:text-bold 2xl:text-[28px] 3xl:text-[32px]"><span class="highlight">Achievements:</span></span><br>
+      <span class="uppercase text-[12px] mt-4 2xl:text-[16px] 2xl:pt-8 3xl:text-[19px]" id="activeCardTextLeft">Discover the accomplishments I've attained over my 6-year career and the progression that has steered me into Product Management<span class="block h-[4rem] md:h-[8rem] 2xl:h-[11.6rem] 3xl:h-[14.6rem]"></span></span>
     </div>
-    <div class="active-card-text-right max-w-[370px] min-x-[299px] text-left">
-      <span class="highlight-container2 font-title uppercase md:text-[20px] md:text-bold"><span class="highlight2 text-backgroundcolor">Skills:</span></span><br>
-      <span class="uppercase text-[12px] mt-4" id="activeCardTextRight" >Analytical skills, strong communication, problem-solving abilities... I'm well-positioned for success as a Product Manager<span class="block h-[4rem] md:h-[8rem]"></span></span>
+    <div class="active-card-text-right text-left md:max-w-[370px] md:min-x-[299px] 2xl:max-w-[400px] 3xl:mr-[10rem] 3xl:max-w-[480px] 3xl:relative 3xl:top-[180px] 3xl:left-[660px]">
+      <span class="highlight-container2 font-title uppercase md:text-[20px] md:text-bold 2xl:text-[28px]"><span class="highlight2 text-backgroundcolor">Skills:</span></span><br>
+      <span class="uppercase text-[12px] mt-4 2xl:text-[16px] 2xl:pt-8 3xl:text-[19px]" id="activeCardTextRight" >Analytical skills, strong communication, problem-solving abilities... I'm well-positioned for success as a Product Manager<span class="block h-[4rem] md:h-[8rem] 2xl:h-[11.6rem] 3xl:h-[14.6rem]"></span></span>
     </div>
   </div>
   <div id="container-fc">
@@ -410,16 +464,16 @@
       </div>
     </div>
   </div>
-  <div class="swiper mySwiper xmd:mt-[50px] lg:mt-[-120px] ">
+  <div class="swiper mySwiper xmd:mt-[50px] lg:mt-[-120px]">
     <div class="swiper-wrapper text-center">
       <div class="swiper-slide">
         <div class="flex flex-col">
-          <div class="4xsm:text-[14px] md:text-[18px] px-4">
+          <div class="4xsm:text-[14px] md:text-[18px] px-4 2xl:text-[20px]">
             <span>
               <%= t('slide1-title') %>
             </span>
           </div>
-          <div class="arrow-container 4xsm:pt-[7rem] 4xsm:pl-[2rem] md:pt-36 md:pl-16">
+          <div class="arrow-container 4xsm:pt-[7rem] 4xsm:pl-[2rem] md:pt-36 md:pl-16 2xl:pt-52 2xl:pl-32">
             <svg class="arrow-svg" width="120" height="60" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
               <path class="arrow-path" d="M10 30 Q40 25, 100 30" />
               <line class="arrow-line-upper" x1="100" y1="20" x2="115" y2="30" />
@@ -428,46 +482,46 @@
           </div>
         </div>
       </div>
-      <div class="swiper-slide 4xsm:text-[12px] md:text-[15px]">
+      <div class="swiper-slide 4xsm:text-[12px] md:text-[15px] 2xl:text-[18px]">
         <div class="flex flex-col justify-between">
           <div>
             <%= t('slide2-title.title') %>
           </div>
           <div class="mx-auto 4xsm:h-24 4xsm:w-24 md:h-[9rem] md:w-28"><%= image_tag ("Logo-fc.png") %></div>
-          <div class="4xsm:text-[12px] md:text-[14px]">
+          <div class="4xsm:text-[12px] md:text-[14px] 2xl:text-[16px]">
             <%= t('slide2-title.position') %>
           </div>
         </div>
       </div>
-      <div class="swiper-slide 4xsm:text-[12px] md:text-[15px]">
+      <div class="swiper-slide 4xsm:text-[12px] md:text-[15px] 2xl:text-[18px]">
         <div class="flex flex-col justify-between">
           <div class="px-4">
             <%= t('slide3-title.title') %>
           </div>
           <div class="mx-auto 4xsm:h-[5rem] 4xsm:w-[12rem] md:h-44 md:w-44 md:pt-12"><%= image_tag ("KPMG.png") %></div>
-          <div class="4xsm:text-[12px] md:text-[14px] md:pb-4">
+          <div class="4xsm:text-[12px] md:text-[14px] md:pb-4 2xl:text-[16px]">
             <%= t('slide3-title.position') %>
           </div>
         </div>
       </div>
-      <div class="swiper-slide 4xsm:text-[12px] md:text-[15px]">
-        <div class="uppercase flex flex-col  justify-between">
+      <div class="swiper-slide 4xsm:text-[12px] md:text-[15px] 2xl:text-[18px]">
+        <div class="uppercase flex flex-col justify-between 3xl:px-4">
           <div>
             <%= t('slide4-title.title') %>
           </div>
-          <div class="mx-auto 4xsm:h-[3rem] 4xsm:w-[12rem]  md:h-[9rem] md:w-64 md:pt-12"><%= image_tag ("BNP.png") %></div>
-          <div class="4xsm:text-[12px] md:text-[14px] md:pb-4">
+          <div class="mx-auto 4xsm:h-[3rem] 4xsm:w-[12rem] md:h-[9rem] md:w-64 md:pt-12"><%= image_tag ("BNP.png") %></div>
+          <div class="4xsm:text-[12px] md:text-[14px] md:pb-4 2xl:text-[16px]">
             <%= t('slide4-title.position') %>
           </div>
         </div>
       </div>
-      <div class="swiper-slide 4xsm:text-[12px] md:text-[15px]">
+      <div class="swiper-slide 4xsm:text-[12px] md:text-[15px] 2xl:text-[18px]">
         <div class="uppercase flex flex-col justify-between">
           <div>
             <%= t('slide5-title.title') %>
           </div>
           <hr>
-          <div class="4xsm:text-[12px] md:text-[14px] md:pb-4">
+          <div class="4xsm:text-[12px] md:text-[14px] md:pb-4 2xl:text-[16px]">
             <%= t('slide5-title.position') %>
           </div>
         </div>
@@ -482,21 +536,23 @@
       </div>
     </div>
   </div>
-  <div class="justify-center additional-text-container font-title md:text-[12px] relative 4xsm:bottom-[45rem] md:bottom-[18rem] mx-auto md:text-bold" id="additionalTextContainer">
-    <div class="scrolling-text-container">
-      <p class="scrolling-text-link"><span class="px-4">https://www.foodclass.fr</span>
-      <span class="px-4">https://www.foodclass.fr</span>
-      <span class="px-4">https://www.foodclass.fr</span>
-      <span class="px-4">https://www.foodclass.fr</span>
-      <span class="px-4">https://www.foodclass.fr</span>
-      <span class="px-4">https://www.foodclass.fr</span>
-      <span class="px-4">https://www.foodclass.fr</span>
-      <span class="px-4">https://www.foodclass.fr</span>
-      <span class="px-4">https://www.foodclass.fr</span>
-      <span class="px-4">https://www.foodclass.fr</span>
-      <span>https://www.foodclass.fr</span></p>
+  <div class="additional-text-container font-title md:text-[12px] absolute md:bottom-[18rem] mx-auto md:text-bold 2xl:bottom-[100rem] 2xl:left-[62rem] 3xl:left-[82rem]" id="additionalTextContainer">
+    <div class="flex justify-center">
+      <div class="scrolling-text-container ">
+        <p class="scrolling-text-link"><span class="px-4">https://www.foodclass.fr</span>
+        <span class="px-4">https://www.foodclass.fr</span>
+        <span class="px-4">https://www.foodclass.fr</span>
+        <span class="px-4">https://www.foodclass.fr</span>
+        <span class="px-4">https://www.foodclass.fr</span>
+        <span class="px-4">https://www.foodclass.fr</span>
+        <span class="px-4">https://www.foodclass.fr</span>
+        <span class="px-4">https://www.foodclass.fr</span>
+        <span class="px-4">https://www.foodclass.fr</span>
+        <span class="px-4">https://www.foodclass.fr</span>
+        <span>https://www.foodclass.fr</span></p>
+      </div>
+      <a href="https://www.foodclass.fr" target="_blank" class="link-container uppercase font-black text-title">visit</a>
     </div>
-    <a href="https://www.foodclass.fr" target="_blank" class="link-container uppercase font-black text-title">visit</a>
   </div>
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
@@ -511,8 +567,8 @@
           // Array of text for each slide
           var slideTextsLeft = [
             `Discover the accomplishments I've attained over my 6-year career and the progression that has steered me into Product Management
-            <span class="block h-[4rem] md:h-[8rem]"></span>`,
-            `<div class="4xsm:block md:hidden">
+            <span class="block h-[4rem] md:h-[8rem] 2xl:h-[11.6rem] 3xl:relative"></span>`,
+            `<div class="4xsm:block md:hidden 3xl:top-[80px]">
               <strong>Developed</strong> strategic plans,
               <strong>designed</strong> and <strong>built</strong> the platform (Figma, Ruby On Rails, Javascript),
               <strong>analyzed</strong> metrics using GA and Hotjar,
@@ -552,7 +608,7 @@
                 Built strong client relationships through insightful analysis and effective communication
               </li>
             </ul>
-            <span class="block h-[1rem] md:mb-[-5.6rem]"></span>`,
+            <span class="block h-[1rem] md:mb-[-5.6rem] 2xl:h-[5.8rem]"></span>`,
             `<div class="4xsm:block md:hidden">
              <strong>Strengthened </strong> collective success through active cross-team work,
              <strong>explained </strong> balance sheet variations and impacts succinctly,
@@ -573,7 +629,7 @@
                 Analyzed Global Markets liquidity ratios collaborating with Front Office teams
               </li>
             </ul>
-            <span class="block md:mb-[-1.2rem]"></span>`,
+            <span class="block md:mb-[-1.2rem] 2xl:h-[1.3rem]"></span>`,
             `<div class="4xsm:block md:hidden">
               <strong>Dual-Degree Mastery:</strong> Master in Management (Project Management, Marketing, Corporate Strategy, etc.),
               <br>
@@ -590,7 +646,7 @@
                 Self-Educated in Growth Marketing, Product Management, and Product Design
               </li>
             </ul>
-            <span class="block md:mb-[-1rem]"></span>`,
+            <span class="block md:mb-[-1rem] 2xl:mb-[-1.8rem]"></span>`,
           ];
           var slideTextsRight = [
             "Analytical skills, strong communication, problem-solving abilities... I'm well-positioned for success as a Product Manager",
@@ -713,6 +769,7 @@
             if (window.innerWidth > 920) {
               additionalTextContainer.style.display = "flex";
               containerFcContainer.style.display = "flex";
+              containerFcContainer.style.position = "absolute";
             } else {
               additionalTextContainer.style.display = "none";
               containerFcContainer.style.display = "none";

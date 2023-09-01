@@ -1,8 +1,10 @@
 <nav data-controller="navbar" data-navbar-target="navbarContainer" data-action="scroll@window->navbar#updateNavbar scroll@window->navbar#handleNavbarVisibility" class="flex items-center justify-between flex-wrap md:mx-12 py-4 sticky top-0 z-50 absolute bg-backgroundcolor md:px-5">
   <div data-navbar-target="logo" class="4xsm:ml-6 2xsm:ml-4 md:ml-0 flex items-center flex-shrink-0 text-orange md:mr-6">
-    <a href="#">
-      <%= image_tag "logo_MP.png", class: "h-16 w-16" %>
-    </a>
+    <div class="h-16 w-16 2xl:h-32 2xl:w-32">
+      <a href="#">
+        <%= image_tag "logo_MP.png" %>
+      </a>
+    </div>
   </div>
   <div data-navbar-target="title" class="hidden" data-navbar-target="text">
     <h1 data-navbar-target="text" data-action="scroll->navbar#handleScroll" class="4xsm:text-[1.85rem] 4xsm:mr-[10px] 3xsm:mr-[0px] 2xsm:text-[1.85rem] md:text-[1.9rem] lg:text-[2.80rem] font-title text-black md:mr-[20px]">
@@ -13,8 +15,8 @@
   <div>
     <div class="4xsm:mr-6 2xsm:mr-4 md:mr-0">
       <div data-controller="language" data-navbar-target="language">
-        <button data-action="click->language#switchLanguage" class="4xsm:text-base md:text-lg" data-lang="en">EN</button>
-        <button data-action="click->language#switchLanguage" class="4xsm:text-base md:text-lg" data-lang="fr">FR</button>
+        <button data-action="click->language#switchLanguage" class="4xsm:text-base md:text-lg 2xl:text-[24px]" data-lang="en">EN</button>
+        <button data-action="click->language#switchLanguage" class="4xsm:text-base md:text-lg 2xl:text-[24px]" data-lang="fr">FR</button>
       </div>
     </div>
   </div>

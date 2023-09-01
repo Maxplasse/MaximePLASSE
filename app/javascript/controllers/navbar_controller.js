@@ -34,12 +34,10 @@ export default class extends Controller {
     }
   }
 
-
   updateNavbar() {
     const scrollAmount = window.scrollY;
     const windowHeight = window.innerHeight;
     const windowWidth = window.innerWidth;
-
 
     const deviceConfig = [
       { maxWidth: 375, scrollPosition: 370, smallHeightScrollPosition: 420, smallestHeightScrollPosition: 340 },
@@ -51,7 +49,6 @@ export default class extends Controller {
       { maxWidth: 2600, scrollPosition: 390, smallHeightScrollPosition: 350 },
 
     ];
-
 
     const currentConfig = deviceConfig.find(config => window.matchMedia(`(max-width: ${config.maxWidth}px)`).matches);
 
@@ -85,7 +82,6 @@ export default class extends Controller {
       }
     }
   }
-
 
   handleScroll() {
     const scrollAmount = window.scrollY;
@@ -133,9 +129,5 @@ export default class extends Controller {
 
       document.body.style.overflowX = "auto";
     }
-
-
   }
-
-
 }

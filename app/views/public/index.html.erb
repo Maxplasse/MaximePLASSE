@@ -1,5 +1,5 @@
 <div>
-  <div class="bg-backgroundcolor rounded-b-[40px] mt-[-100px] 4xsm:pb-24 md:pb-12 md:pb-0">
+  <div class="bg-backgroundcolor rounded-b-[40px] mt-[-100px] 4xsm:pb-24 md:pb-12 2xl:pb-0 2xl:mt-[-135px] 3xl:pb-[234px]">
     <div class="h-[100vh] flex text-black flex-col justify-center items-center font-title md:mt-[30px]">
       <div data-controller="title" data-action="scroll@window->title#updateTitleSize">
         <h1>
@@ -8,7 +8,7 @@
         </h1>
       </div>
       <div class="mt-[-40px] arrow flex justify-center">
-        <div class="text-black font-bold 4xsm:ml-8 4xsm:text-base 2xsm:ml-8 md:ml-0 md:text-xl mt-20 4xsm:flex-1 4xsm:align-center md:flex-none pt-8">
+        <div class="text-black font-bold 4xsm:ml-8 4xsm:text-base 2xsm:ml-8 md:ml-0 md:text-xl mt-20 4xsm:flex-1 4xsm:align-center md:flex-none pt-8 2xl:text-[20px]">
           <a href="#" onclick="scrollToSection('presentation-section', event)"><%= t('who') %></a>
         </div>
         <div class="flex-1 align-center md:flex-none">
@@ -20,35 +20,35 @@
             <span class="link__line"></span>
           </a>
         </div>
-        <div class="text-black 4xsm:mr-8 4xsm:text-base 2xsm:mr-8 md:mr-0 md:text-xl mt-20 flex-1 align-center md:flex-none font-bold pt-8">
+        <div class="text-black 4xsm:mr-8 4xsm:text-base 2xsm:mr-8 md:mr-0 md:text-xl mt-20 flex-1 align-center md:flex-none font-bold pt-8 2xl:text-[20px]">
           <a href="#"><%= t('cv') %></a>
         </div>
       </div>
     </div>
-    <section id="presentation-section" class="4xsm:mx-4 md:flex my-20 bg-black md:mx-[3.6rem] rounded md:px-5">
+    <section id="presentation-section" class="4xsm:mx-4 md:flex my-20 bg-black md:mx-[3.6rem] rounded md:px-5 3xl:py-8">
       <div class="text-backgroundcolor 4xsm:mx-8 md:mx-16 md:flex">
-        <div class="pl-4 mt-8 4xsm:ml-1 md:flex md:flex-col md:ml-8">
-          <div class="4xsm:text-[20px] 4xsm:pt-12 4xsm:pb-6 2xsm:text-[21px] font-title tracking-tighter md:pb-0 md:text-[25px] md:pt-0 md:mb-8 md:mt-8">
+        <div class="pl-4 mt-8 4xsm:ml-1 md:flex md:flex-col md:ml-8 2xl:ml-16">
+          <div class="4xsm:text-[20px] 4xsm:pt-12 4xsm:pb-6 2xsm:text-[21px] font-title tracking-tighter md:pb-0 md:text-[25px] 2xl:text-[40px] md:pt-0 md:mb-8 md:mt-8">
             <%= t('about') %>
           </div>
-          <div class="4xsm:h-[10rem] 4xsm:w-[11rem] 4xsm:pr-[12px] 4xsm:float-left md:float-none md:h-80 md:w-80">
+          <div class="4xsm:h-[10rem] 4xsm:w-[11rem] 4xsm:pr-[12px] 4xsm:float-left md:float-none md:h-80 md:w-80 2xl:w-[370px] 2xl:h-[370px]">
             <%= image_tag ("Max.png") %>
           </div>
-          <div class="text-circle 4xsm:hidden md:block md:h-80 md:w-80 md:mb-20 md:mt-32">
+          <div class="text-circle 4xsm:hidden md:block md:h-80 md:w-80 md:mb-20 md:mt-32 2xl:w-96 2xl:h-96 3xl:w-100 3xl:h-100">
             <%= image_tag ("Text-circle-2.png") %>
           </div>
         </div>
         <div class="md:flex md:flex-1 md:flex-col">
-          <div class="uppercase font-title font-light text-backgroundcolor 4xsm:mb-4 4xsm:ml-[3vw] 4xsm:text-left 4xsm:text-[15px] md:mx-[10vw] md:mb-0 md:text-[30px] md:mt-12 md:py-8 leading-[1.4]">
+          <div class="uppercase font-title font-light text-backgroundcolor 4xsm:mb-4 4xsm:ml-[3vw] 4xsm:text-left 4xsm:text-[15px] md:mx-[10vw] md:mb-0 md:text-[30px] md:mt-12 md:py-8 leading-[1.4] 2xl:text-[40px] 2xl:mx-[5vw] 3xl:text-[52px]">
             <%= t('presentation') %>
           </div>
-          <div class="uppercase font-title font-light 4xsm:text-[12px] 4xsm:mx-[3vw] 4xsm:py-8 md:mx-[10vw] md:text-[18px] md:py-8 leading-[1.4] md:mb-8">
+          <div class="uppercase font-title font-light leading-[1.4] 4xsm:text-[12px] 4xsm:mx-[3vw] 4xsm:py-8 md:mx-[10vw] md:text-[18px] md:py-8 md:mb-8 2xl:text-[25px] 2xl:py-4 2xl:mx-[5vw] 3xl:text-[30px]">
             <%= t('presentation2') %>
           </div>
           <div class="text-circle2 4xsm:mx-auto 4xsm:h-48 4xsm:w-48 md:hidden">
             <%= image_tag ("Text-circle-2.png") %>
           </div>
-          <div id="scrollingText" class="scrolling-text dotted-line-box uppercase font-title font-light 4xsm:text-[11px] 4xsm:pb-10 md:pb-0 md:py-4 md:mx-[8vw] md:text-[18px] md:py-8 leading-[1.4] md:mt-16">
+          <div id="scrollingText" class="scrolling-text dotted-line-box uppercase font-title font-light 4xsm:text-[11px] 4xsm:pb-10 md:pb-0 md:py-4 md:mx-[8vw] md:text-[18px] md:py-8 leading-[1.4] md:mt-16 2xl:mt-36 2xl:text-[25px] 2xl:mx-[2vw] 3xl:text-[30px] 3xl:mt-40">
             <div class="section">
               <%= t('current-focus') %>
             </div>
@@ -56,19 +56,19 @@
         </div>
       </div>
     </section>
-    <div class="text-black 4xsm:mt-16 4xsm:mx-8 md:mx-16 md:mt-32">
-      <div class="4xsm:text-[20px] 4xsm:ml-4 2xsm:text-[21px] md:text-[25px] font-title tracking-tighter md:ml-24"><%= t('experience') %></div>
-      <div class="4xsm:mt-20 md:mt-[3rem] lg:mt-[20rem]">
+    <div class="text-black 4xsm:mt-16 4xsm:mx-8 md:mx-16 md:mt-32 2xl:mx-32 2xl:mt-48 3xl:mt-64">
+      <div class="4xsm:text-[20px] 4xsm:ml-4 2xsm:text-[21px] md:text-[25px] font-title tracking-tighter md:ml-24 2xl:text-[40px] 3xl:pb-16"><%= t('experience') %></div>
+      <div class="4xsm:mt-20 md:mt-[3rem] lg:mt-[20rem] 2xl:mt-[24rem] 3xl:mt-[14rem]">
         <%= render 'shared/carousel' %>
       </div>
     </div>
   </div>
   <div class="bg-black 4xsm:mt-20 4xsm:mx-14 md:mx-40 md:mt-32">
     <div class="flex items-baseline mb-16 font-title text-backgroundcolor tracking-tighter mt-8">
-      <div class="4xsm:text-[20px] 2xsm:text-[21px] md:text-[25px]">
+      <div class="4xsm:text-[20px] 2xsm:text-[21px] md:text-[25px] 2xl:text-[40px]">
         <%= t('contact') %>
       </div>
-      <div class="text-[14px] italic ml-4">
+      <div class="text-[14px] italic ml-4 2xl:text-[20px]">
         <%= t('contact-sub') %>
       </div>
     </div>

@@ -42,6 +42,7 @@ module.exports = {
       lgxl: '1210px',
       xl: '1280px',
       '2xl': '1436px',
+      '3xl': '1920px',
     },
   },
   plugins: [

@@ -21,9 +21,13 @@ export default class extends Controller {
     } else if (windowWidth <= 992) {
       initialFontSize = 5;
     } else if (windowWidth <= 1200) {
-      initialFontSize = 5;
+      initialFontSize = 7;
+    } else if (windowWidth <= 1350) {
+      initialFontSize = 8;
+    } else if (windowWidth <= 1600) {
+      initialFontSize = 12;
     } else {
-      initialFontSize = 6.2;
+      initialFontSize = 14;
     }
 
     this.element.style.fontSize = `${initialFontSize}rem`;
@@ -39,8 +43,10 @@ export default class extends Controller {
       { maxWidth: 414, minFontSize: 0, maxFontSize: 4 },
       { maxWidth: 768, minFontSize: 0.3, maxFontSize: 4 },
       { maxWidth: 992, minFontSize: 0.3, maxFontSize: 5 },
-      { maxWidth: 1200, minFontSize: 1.5, maxFontSize: 5 },
-      { maxWidth: 2700, minFontSize: 1.5, maxFontSize: 6.2 },
+      { maxWidth: 1200, minFontSize: 1.2, maxFontSize: 7 },
+      { maxWidth: 1350, minFontSize: 1.2, maxFontSize: 8 },
+      { maxWidth: 1600, minFontSize: 1.5, maxFontSize: 12 },
+      { maxWidth: 2700, minFontSize: 1.5, maxFontSize: 14 },
     ];
 
     let fontSize = 0;
