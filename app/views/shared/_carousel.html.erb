@@ -221,9 +221,10 @@
     .additional-text-container {
       display: none;
       border-radius: 10rem;
-      background: #aeafb1;
-      padding: 8px 10px;
-      width: 350px;
+      background: #CC978E;
+      opacity: 0.8;
+      padding: 10px 10px;
+      width: 450px;
     }
 
 
@@ -233,6 +234,7 @@
       align-items: center;
       margin: 0 10px;
       padding-left: 6px;
+      color: white;
     }
 
     .link-container a {
@@ -243,13 +245,13 @@
 
     .scrolling-text-container {
       display: flex;
-      color: #FAF9F7;
+      color: #F74C20;
       border-radius: 10rem;
       align-items: center;
       overflow: hidden;
-      width: 260px;
-      background: #d1d1d1;
+      width: 349px;
       padding: 5px 10px;
+      background: #FAF9F7;
     }
 
     .scrolling-text-link {
@@ -301,7 +303,7 @@
     }
 
     .arrow-fc .point-fc:before, .arrow-fc .point-fc:after {
-      border: 1.5px solid #212529;
+      border: 1.3px solid #212529;
       border-radius: 3px;
       height: 25px;
       content: "";
@@ -409,6 +411,28 @@
       }
     }
 
+    @media (max-width: 1600px) {
+      .additional-text-container {
+        padding: 8px 10px;
+        width: 400px;
+      }
+      .scrolling-text-container {
+        width: 299px;
+      }
+    }
+
+    @media (max-width: 1350px) {
+      .additional-text-container {
+        padding: 8px 10px;
+        width: 350px;
+      }
+      .scrolling-text-container {
+        padding: 2px 10px;
+        width: 260px;
+      }
+    }
+
+
     @media (max-width: 920px) {
       .additional-text-container {
         display: none;
@@ -420,14 +444,14 @@
 
     @media (max-width: 1600px) {
       .arrow-fc {
-        left: 421px;
-        top: -77px
+        left: 436px;
+        top: -93px;
       }
     }
     @media (max-width: 1350px) {
       .arrow-fc {
-        left: 411px;
-        bottom: 42px;
+        left: 436px;
+        top: -54px;
       }
     }
 
@@ -439,11 +463,11 @@
   <!-- Swiper -->
   <div class="active-card-text">
     <div class="container active-card-text-left text-left md:ml-[5rem] md:max-w-[370px] md:min-x-[299px] 2xl:max-w-[400px] 3xl:ml-[10rem] 3xl:relative 3xl:top-[180px] 3xl:left-[60px]">
-      <span class="highlight-container font-title uppercase md:text-[20px] md:text-bold 2xl:text-[28px] 3xl:text-[32px]"><span class="highlight">Achievements:</span></span><br>
+      <span class="highlight-container font-title uppercase md:text-[20px] md:text-bold 2xl:text-[28px] 3xl:text-[32px]"><span class="highlight"><%= t('achievements') %></span></span><br>
       <span class="uppercase text-[12px] mt-4 2xl:text-[16px] 2xl:pt-8 3xl:text-[19px]" id="activeCardTextLeft">Discover the accomplishments I've attained over my 6-year career and the progression that has steered me into Product Management<span class="block h-[4rem] md:h-[8rem] 2xl:h-[11.6rem] 3xl:h-[14.6rem]"></span></span>
     </div>
     <div class="active-card-text-right text-left md:max-w-[370px] md:min-x-[299px] 2xl:max-w-[400px] 3xl:mr-[10rem] 3xl:max-w-[480px] 3xl:relative 3xl:top-[180px] 3xl:left-[660px]">
-      <span class="highlight-container2 font-title uppercase md:text-[20px] md:text-bold 2xl:text-[28px]"><span class="highlight2 text-backgroundcolor">Skills:</span></span><br>
+      <span class="highlight-container2 font-title uppercase md:text-[20px] md:text-bold 2xl:text-[28px]"><span class="highlight2 text-backgroundcolor"><%= t('skills') %></span></span><br>
       <span class="uppercase text-[12px] mt-4 2xl:text-[16px] 2xl:pt-8 3xl:text-[19px]" id="activeCardTextRight" >Analytical skills, strong communication, problem-solving abilities... I'm well-positioned for success as a Product Manager<span class="block h-[4rem] md:h-[8rem] 2xl:h-[11.6rem] 3xl:h-[14.6rem]"></span></span>
     </div>
   </div>
@@ -487,7 +511,7 @@
           <div>
             <%= t('slide2-title.title') %>
           </div>
-          <div class="mx-auto 4xsm:h-24 4xsm:w-24 md:h-[9rem] md:w-28"><%= image_tag ("Logo-fc.png") %></div>
+          <div class="mx-auto 4xsm:h-24 4xsm:w-24 md:h-[9rem] md:w-28 2xl:h-[14rem] 2xl:w-[13rem]"><%= image_tag ("Logo-fc.png") %></div>
           <div class="4xsm:text-[12px] md:text-[14px] 2xl:text-[16px]">
             <%= t('slide2-title.position') %>
           </div>
@@ -498,7 +522,7 @@
           <div class="px-4">
             <%= t('slide3-title.title') %>
           </div>
-          <div class="mx-auto 4xsm:h-[5rem] 4xsm:w-[12rem] md:h-44 md:w-44 md:pt-12"><%= image_tag ("KPMG.png") %></div>
+          <div class="mx-auto 4xsm:h-[5rem] 4xsm:w-[12rem] md:h-44 md:w-44 md:pt-12 2xl:h-[15rem] 2xl:w-[20rem]"><%= image_tag ("KPMG.png") %></div>
           <div class="4xsm:text-[12px] md:text-[14px] md:pb-4 2xl:text-[16px]">
             <%= t('slide3-title.position') %>
           </div>
@@ -509,7 +533,7 @@
           <div>
             <%= t('slide4-title.title') %>
           </div>
-          <div class="mx-auto 4xsm:h-[3rem] 4xsm:w-[12rem] md:h-[9rem] md:w-64 md:pt-12"><%= image_tag ("BNP.png") %></div>
+          <div class="mx-auto 4xsm:h-[3rem] 4xsm:w-[12rem] md:h-[9rem] md:w-64 md:pt-12 2xl:h-[12rem] 2xl:w-[23rem]"><%= image_tag ("BNP.png") %></div>
           <div class="4xsm:text-[12px] md:text-[14px] md:pb-4 2xl:text-[16px]">
             <%= t('slide4-title.position') %>
           </div>
@@ -536,22 +560,22 @@
       </div>
     </div>
   </div>
-  <div class="additional-text-container font-title md:text-[12px] absolute md:bottom-[18rem] mx-auto md:text-bold 2xl:bottom-[100rem] 2xl:left-[62rem] 3xl:left-[82rem]" id="additionalTextContainer">
+  <div class="additional-text-container font-title md:text-[12px] absolute md:bottom-[91rem] md:left-[46rem] mx-auto md:text-bold 2xl:bottom-[100rem] 2xl:left-[62rem] 3xl:left-[78rem]" id="additionalTextContainer">
     <div class="flex justify-center">
-      <div class="scrolling-text-container ">
-        <p class="scrolling-text-link"><span class="px-4">https://www.foodclass.fr</span>
-        <span class="px-4">https://www.foodclass.fr</span>
-        <span class="px-4">https://www.foodclass.fr</span>
-        <span class="px-4">https://www.foodclass.fr</span>
-        <span class="px-4">https://www.foodclass.fr</span>
-        <span class="px-4">https://www.foodclass.fr</span>
-        <span class="px-4">https://www.foodclass.fr</span>
-        <span class="px-4">https://www.foodclass.fr</span>
-        <span class="px-4">https://www.foodclass.fr</span>
-        <span class="px-4">https://www.foodclass.fr</span>
+      <div class="scrolling-text-container 2xl:text-[20px] font-bold">
+        <p class="scrolling-text-link"><span class="px-4 py-2">https://www.foodclass.fr</span>
+        <span class="px-4 py-2">https://www.foodclass.fr</span>
+        <span class="px-4 py-2">https://www.foodclass.fr</span>
+        <span class="px-4 py-2">https://www.foodclass.fr</span>
+        <span class="px-4 py-2">https://www.foodclass.fr</span>
+        <span class="px-4 py-2">https://www.foodclass.fr</span>
+        <span class="px-4 py-2">https://www.foodclass.fr</span>
+        <span class="px-4 py-2">https://www.foodclass.fr</span>
+        <span class="px-4 py-2">https://www.foodclass.fr</span>
+        <span class="px-4 py-2">https://www.foodclass.fr</span>
         <span>https://www.foodclass.fr</span></p>
       </div>
-      <a href="https://www.foodclass.fr" target="_blank" class="link-container uppercase font-black text-title">visit</a>
+      <a href="https://www.foodclass.fr" target="_blank" class="link-container uppercase text-title 2xl:text-[20px]">visit</a>
     </div>
   </div>
   <!-- Swiper JS -->

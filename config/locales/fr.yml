@@ -1,7 +1,30 @@
 fr:
+  about: "A PROPOS"
+  achievements: "RÉALISATIONS:"
+  achievements-foodclass: "Developed strategic plans, designed and built the platform (Figma, Ruby On Rails, Javascript), analyzed metrics using GA and Hotjar, addressed user needs with custom features, built a community of 40 chefs, engaged 1000+ users via social media and newsletters"
   cv: "MON CV"
+  current-focus: "Après 4 ANS D'EXPÉRIENCE EN CONSEIL/FINANCE ET UNE AVENTURE ENTREPRENEURIALE DE 3 ANS, JE SUIS ACTIVEMENT À LA RECHERCHE D'UN POSTE DE PM. MES COMPÉTENCES EN ANALYSE DE DONNÉES ET MON PASSÉ ENTREPRENEURIAL CONSTITUENT UN ATOUT INDÉNIABLE POUR CE POSTE."
+  contact: "ME CONTACTER"
+  contact-sub: " (Peins la carte pour obtenir les infos)"
+  contact-me-title: "A la recherche d'un Senior PM très motivé ?"
+  designed-developped: "Conçu et développé par Maxime Plasse"
   experience: "MON PARCOURS PROFESSIONNEL"
   firstname: "MAXIME"
   lastname: "PLASSE"
-  presentation: "SALUT, moi c'est Maxime ! Je suis une personne dévouée animée par une passion pour le croisement entre la gestion de produits et le design. J'épanouis ma créativité en élaborant des expériences utilisateur exceptionnelles et en concrétisant des produits de la simple idée à la réalité. Mon parcours est jalonné par l'excitation de repérer des opportunités sur le marché, de transformer les besoins des utilisateurs en solutions innovantes et de coordonner des collaborations fluides au sein d'équipes pluridisciplinaires"
+  presentation: "APRÈS UNE RICHE EXPÉRIENCE EN CONSEIL, JE CRÉE MA PROPRE ENTREPRISE : UNE VÉRITABLE RÉVÉLATION POUR LE PRODUCT MANAGEMENT."
+  presentation2: "JE SUIS ANIMÉ PAR LA CRÉATION D'EXPÉRIENCES UTILISATEURS REMARQUABLES ET LA CONCRÉTISATION DE PRODUITS, DEPUIS LA CONCEPTION JUSQU'À LA RÉALISATION."
+  slide1-title: "MON PARCOURS VERS LE PRODUCT MANAGEMENT"
+  slide2-title:
+    title: "UNE AVENTURE ENTREPRENEURIALE DE 3 ANS"
+    position: "FONDATEUR, CPO & FULL STACK DEVELOPER - FOODCLASS"
+  slide3-title:
+    title: "UNE EXPÉRIENCE SIGNIFICATIVE EN CONSEIL (3 ans)"
+    position: "SENIOR ANALYST - BUSINESS MODELLING & DATA ANALYSIS"
+  slide4-title:
+    title: "UN POSTE D'ANALYSTE FINANCIER DANS UN CONTEXTE INTERNATIONNAL"
+    position: "ANALYSTE FINANCIER - GLOBAL MARKETS (BNP PARIBAS CIB)"
+  slide5-title:
+    title: "DES COMPÉTENCES EN MANAGEMENT ET DÉVELOPPEMENT WEB : mon parcours scolaire"
+    position: "Master en Management, Msc, Bootcamp en Web Development"
+  skills: "COMPÉTENCES:"
   who: "QUI SUIS-JE ?"

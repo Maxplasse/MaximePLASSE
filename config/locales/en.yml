@@ -1,15 +1,18 @@
 en:
+  about: "ABOUT"
+  achievements: "ACHIEVEMENTS:"
   achievements-foodclass: "Developed strategic plans, designed and built the platform (Figma, Ruby On Rails, Javascript), analyzed metrics using GA and Hotjar, addressed user needs with custom features, built a community of 40 chefs, engaged 1000+ users via social media and newsletters"
   cv: "RESUME"
   current-focus: "With 4 years in analytics and a 3-year entrepreneurial journey, I'm now pursuing a Product Manager role. My expertise in data-driven decisions and entrepreneurial insights uniquely position me to drive innovation as a Product Manager."
   contact: "CONTACT ME"
   contact-sub: " (Paint the card to get info)"
   contact-me-title: "You're looking for a highly motivated senior Product Manager?"
+  designed-developped: "Designed and developped by Maxime Plasse"
   experience: "MY CAREER PATH"
   firstname: "MAX"
   lastname: "PLASSE"
-  presentation: "I'm a dedicated professional driven by an unwavering passion for the convergence of product management and design."
-  presentation2: "I thrive on the creative process of crafting exceptional user experiences and driving products from concept to reality."
+  presentation: "AFTER A RICH EXPERIENCE IN CONSULTING, I DECIDE TO CREATE MY OWN BUSINESS: A TRUE REVELATION FOR PRODUCT MANAGEMENT."
+  presentation2: "I TAKE GREAT PLEASURE IN CREATING AMAZING USER EXPERIENCES AND SUCCESSFULLY BRINGING PRODUCTS FROM CONCEPT TO REALITY."
   slide1-title: "MY JOURNEY TOWARDS PRODUCT MANAGEMENT"
   slide2-title:
     title: "A 3 YEAR-ENTREPRENEURSHIP ADVENTURE"
@@ -23,5 +26,5 @@ en:
   slide5-title:
     title: "Blending Management and Technical Skills: My Educational Story"
     position: "Master in Management, Msc, Bootcamp in Web Development"
-  about: "ABOUT"
+  skills: "SKILLS:"
   who: "WHO AM I?"
